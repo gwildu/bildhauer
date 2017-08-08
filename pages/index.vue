@@ -7,7 +7,18 @@
   </section>
 </template>
 
-<script></script>
+<script>
+  export default {
+    head () {
+      return {
+        title: 'Kurse',
+        meta: [
+          { vmid: 'robots', name: 'robots', content: 'noindex, nofollow' }
+        ]
+      }
+    }
+  }
+</script>
 
 <style>
 .container
