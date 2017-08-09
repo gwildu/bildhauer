@@ -12,3 +12,6 @@ dist
 
 # JetBrains idea folder
 .idea/
+
+# mac metafiles
+.DS_Store

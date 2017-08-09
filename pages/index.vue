@@ -1,8 +1,8 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="title">bildhauer</h1>
-      <h2 class="subtitle">bildhauerei-rickenbacher.ch website</h2>
+      <h1 class="title">Kurse<br/>Bildhauerei Rickenbacher</h1>
+      <h2 class="subtitle">comming soon...</h2>
     </div>
   </section>
 </template>
