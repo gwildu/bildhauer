@@ -1,14 +1,26 @@
 <template>
-  <section class="container">
+  <section id="content" class="bi-content">
     <div>
-      <h1 class="title">Kurse<br/>Bildhauerei Rickenbacher</h1>
-      <h2 class="subtitle">comming soon...</h2>
+      <h1 class="bi-text__title bi-text__title--1 bi-text--centered">Kurse<br/>Bildhauerei Rickenbacher</h1>
+      <h2 class="bi-text__title bi-text__title--2 bi-text--centered">comming soon...</h2>
+      <p class="bi-text__paragraph bi-text--centered">
+        Wir bieten Kurse für Bildhauerei und Steinmetzarbeiten an.
+        <br/>Für Anfragen kontaktieren Sie uns bitte
+        <a class="bi-text__link" href="http://www.bildhauer.sg/index.php/ueber-uns-28.html" title="Kontakt">hier</a>.
+      </p>
+
+      <h2>Lebenslauf</h2>
+      <bi-cv></bi-cv>
     </div>
   </section>
 </template>
 
 <script>
+  import cv from '../components/cv.vue'
   export default {
+    components: {
+      'bi-cv': cv
+    },
     head () {
       return {
         title: 'Kurse',
@@ -21,33 +33,4 @@
 </script>
 
 <style>
-.container
-{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-.links
-{
-  padding-top: 15px;
-}
 </style>

@@ -1,0 +1,25 @@
+/* RAW COLORS */
+
+// GOLD
+$color__gold--1: rgb(195, 157, 0);
+// BROWN
+$color__brown--1: rgb(93, 69, 25);
+$color__brown--2: rgb(239, 235, 233);
+// BLUE
+$color__blue--1: rgb(59, 96, 255);
+// GREY
+$color__grey--1: rgb(250, 249, 248);
+
+/* TEXT COLORS */
+$color__text--main: $color__brown--1;
+$color__text--link: $color__blue--1;
+$color__text--highlight: $color__gold--1;
+
+/* LINE COLORS */
+$color__line--main: $color__gold--1;
+
+/* BACKGROUND COLORS */
+$color__background--main: $color__grey--1;
+
+/* SHADOW COLORS */
+$color__shadow--main: $color__brown--1;
