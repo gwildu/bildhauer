@@ -15,13 +15,14 @@ time, mark, audio, video {
 }
 html {
   font-family: "Helvetica Neue", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: $color__text--main;
   background-color: $color__background--main;
+  line-height: 1.2;
 }
 
 @import 'typography';

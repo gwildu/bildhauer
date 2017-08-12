@@ -1,10 +1,17 @@
 <template>
-  <div class="bi-card">
+  <div
+    class="bi-card"
+    :class="{'bi-card--no-padding': noPadding}"
+  >
     <slot/>
   </div>
 </template>
 
-<script></script>
+<script>
+  export default {
+    props: ['noPadding']
+  }
+</script>
 
 <style lang="scss">
   @import '../layouts/styles/variables';
@@ -15,5 +22,8 @@
     margin: 0 auto 30px auto;
     padding: 15px;
     width: 100%;
+    &--no-padding {
+      padding: 0;
+    }
   }
 </style>

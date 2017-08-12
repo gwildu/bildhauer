@@ -8,8 +8,6 @@
         <br/>Für Anfragen kontaktieren Sie uns bitte
         <a class="bi-text__link" href="http://www.bildhauer.sg/index.php/ueber-uns-28.html" title="Kontakt">hier</a>.
       </p>
-
-      <h2>Lebenslauf</h2>
       <bi-cv></bi-cv>
     </div>
   </section>

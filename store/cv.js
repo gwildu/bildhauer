@@ -23,7 +23,7 @@ export default {
         to: {
           year: 2000
         },
-        title: 'Angestellter bei Steinbildhauer',
+        title: 'Angestellter Steinbildhauer',
         company: {
           title: 'Atelier R. Stadelmann AG'
         },

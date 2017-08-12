@@ -14,12 +14,14 @@ $color__grey--1: rgb(250, 249, 248);
 $color__text--main: $color__brown--1;
 $color__text--link: $color__blue--1;
 $color__text--highlight: $color__gold--1;
+$color__text--reverse: $color__grey--1;
 
 /* LINE COLORS */
 $color__line--main: $color__gold--1;
 
 /* BACKGROUND COLORS */
 $color__background--main: $color__grey--1;
+$color__background--dark: lighten($color__brown--1, 5%);
 
 /* SHADOW COLORS */
-$color__shadow--main: $color__brown--1;
+$color__shadow--main: lighten($color__brown--1, 0%);

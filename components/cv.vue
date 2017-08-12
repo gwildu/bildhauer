@@ -1,26 +1,28 @@
 <template>
-  <ul>
-    <bi-card
-      class="bi-station"
-      v-for="station in bi_cv_stations"
-    >
-      <h4>{{station.title}}</h4>
-      <div>{{station.from.year}} - {{station.to.year}}</div>
-      <a v-if="station.company.link" :href="station.company.link" :title="station.company.title">{{station.company.title}}</a>
-      <div v-else>{{station.company}}</div>
-      <div>{{station.location}}</div>
-      <div v-if="station.text">{{station.text}}</div>
-    </bi-card>
-  </ul>
+  <div class="bi-cv">
+    <h2 class="bi-text__title bi-text__title--2">Lebenslauf</h2>
+    <ul>
+      <li>
+        <bi-card
+          no-padding="true"
+          v-for="station in bi_cv_stations"
+        >
+          <bi-station :station="station"/>
+        </bi-card>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
   import { mapGetters } from 'vuex'
   import card from './card.vue'
+  import station from './station.vue'
 
   export default {
     components: {
-      'bi-card': card
+      'bi-card': card,
+      'bi-station': station
     },
     computed: {
       ...mapGetters([
