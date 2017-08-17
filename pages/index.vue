@@ -8,6 +8,7 @@
         <br/>Für Anfragen kontaktieren Sie uns bitte
         <a class="bi-text__link" href="http://www.bildhauer.sg/index.php/ueber-uns-28.html" title="Kontakt">hier</a>.
       </p>
+      <bi-details></bi-details>
       <bi-cv></bi-cv>
     </div>
   </section>
@@ -15,9 +16,11 @@
 
 <script>
   import cv from '../components/cv.vue'
+  import details from '../components/details.vue'
   export default {
     components: {
-      'bi-cv': cv
+      'bi-cv': cv,
+      'bi-details': details
     },
     head () {
       return {

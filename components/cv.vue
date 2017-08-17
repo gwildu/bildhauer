@@ -5,6 +5,7 @@
       <li>
         <bi-card
           no-padding="true"
+          :level="3"
           v-for="station in bi_cv_stations"
         >
           <bi-station :station="station"/>
