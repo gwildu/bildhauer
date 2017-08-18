@@ -10,7 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'bildhauerei-rickenbacher.ch website' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700' }
     ]
   },
   /*
@@ -33,6 +33,11 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      // if (true) {
+      //   console.log(JSON.stringify(config))
+      //   config.resolve.alias['vue-svgicon'] = 'vue-svgicon/component/svgicon.vue'
+      // }
     }
   }
+  // plugins: ['~/plugins/vue-svgicon']
 }

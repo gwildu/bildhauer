@@ -1,5 +1,6 @@
 <template>
   <section id="content" class="bi-content">
+    <bi-icon name="zoom" witdh="200" height="200" color="#ff0000"></bi-icon>
     <div>
       <h1 class="bi-text__title bi-text__title--1 bi-text--centered">Kurse<br/>Bildhauerei Rickenbacher</h1>
       <h2 class="bi-text__title bi-text__title--2 bi-text--centered">comming soon...</h2>
@@ -17,10 +18,12 @@
 <script>
   import cv from '../components/cv.vue'
   import details from '../components/details.vue'
+  import icon from 'vue-svgicon/component/svgicon.vue'
   export default {
     components: {
       'bi-cv': cv,
-      'bi-details': details
+      'bi-details': details,
+      'bi-icon': icon
     },
     head () {
       return {
