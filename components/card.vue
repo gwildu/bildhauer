@@ -19,7 +19,7 @@
     background: white;
     border-radius: $border__radius--main;
     margin: 0 auto 30px auto;
-    padding: 15px;
+    padding: 30px;
     width: 100%;
     &--no-padding {
       padding: 0;

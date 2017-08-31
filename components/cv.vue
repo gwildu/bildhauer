@@ -1,29 +1,31 @@
 <template>
   <div class="bi-cv">
-    <h2 class="bi-text__title bi-text__title--2">Lebenslauf</h2>
+    <h2 class="bi-text__title bi-text__title--3">Lebenslauf</h2>
     <ul>
       <li>
-        <bi-card
+        <gwi-card
+          v-if="bi_cv_stations"
           no-padding="true"
           :level="3"
           v-for="station in bi_cv_stations"
         >
           <bi-station :station="station"/>
-        </bi-card>
+        </gwi-card>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+  import gwiCard from './card.vue'
+  import biStation from './station.vue'
   import { mapGetters } from 'vuex'
-  import card from './card.vue'
-  import station from './station.vue'
 
   export default {
+    props: ['stations'],
     components: {
-      'bi-card': card,
-      'bi-station': station
+      'gwi-card': gwiCard,
+      'bi-station': biStation
     },
     computed: {
       ...mapGetters([
