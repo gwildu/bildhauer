@@ -1,0 +1,33 @@
+{
+  "defaultProject": "bildhauer",
+  "projects": {
+    "bildhauer": {
+      "timezones": [
+        "Europe/Zurich"
+      ],
+      "currencies": [
+        "CHF"
+      ],
+      "interface": {
+        "autoOpen": true,
+        "port": 8888
+      },
+      "languages": {
+        "de-CH": "deCH",
+        "fr-CH": "frCh"
+      },
+      "defaultLanguage": "de-CH",
+      "programmingLanguage": "javascript",
+      "store": "./l10ns/",
+      "output": "./dist/l10ns",
+      "source": [
+        "pages/**/**.vue",
+        "components/**/**.vue"
+      ],
+      "function": {
+        "name": "translate",
+        "nameUsingData": "translate"
+      }
+    }
+  }
+}

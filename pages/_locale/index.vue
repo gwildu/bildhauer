@@ -8,9 +8,9 @@
 </template>
 
 <script>
-  import biCourseInstructor from '../components/course-instructor.vue'
-  import biDetails from '../components/details.vue'
-  import biCourses from '../components/courses.vue'
+  import biCourseInstructor from '../../components/course-instructor.vue'
+  import biDetails from '../../components/details.vue'
+  import biCourses from '../../components/courses.vue'
 
   export default {
     components: {
