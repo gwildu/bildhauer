@@ -13,5 +13,8 @@
     max-width: 1020px;
     margin: 0 auto;
     padding: 30px;
+    @media screen and (max-width: 600px) {
+      padding: 5px;
+    }
   }
 </style>

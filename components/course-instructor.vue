@@ -1,6 +1,6 @@
 <template>
   <div>
-    <gwi-collapsible>
+    <gwi-collapsible id="instructor">
       <h2
         slot="header"
         class="bi-text__title bi-text__title--2"

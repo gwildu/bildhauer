@@ -1,30 +1,36 @@
 <template>
-  <div>
+  <div :id="id">
     <div
       class="gwi-collapsible__header"
       @click="toggle"
     >
       <slot name="header"></slot>
       <span
-        class="bi-text__link"
+        class="gwi-collapsible__toggle bi-text__link"
       >
-        <slot
-          v-if="!isVisible"
-          name="toggleOn"></slot>
+        <transition name="fade">
+          <slot
+            v-if="!isVisible"
+            name="toggleOn"></slot>
         <slot
           v-if="isVisible"
           name="toggleOff"></slot>
+        </transition>
       </span>
     </div>
-    <div v-if="isVisible" class="gwi-collapsible__content">
-      <slot name="content"></slot>
-    </div>
+    <transition name="fade">
+      <div v-if="isVisible" class="gwi-collapsible__content">
+        <slot name="content"></slot>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
+  import scrollToElement from 'scroll-to-element'
+
   export default {
-    props: ['initialIsVisible', 'bindIsVisible'],
+    props: ['initialIsVisible', 'bindIsVisible', 'id'],
     data () {
       return {
         internalIsVisible: this.initialIsVisible
@@ -38,6 +44,13 @@
     methods: {
       toggle () {
         this.internalIsVisible = !this.internalIsVisible
+        if (this.internalIsVisible) {
+          this.$nextTick(() => {
+            scrollToElement(`#${this.id}`, {
+              duration: 500
+            })
+          })
+        }
       }
     }
   }
@@ -51,5 +64,14 @@
       align-items: center;
       justify-content: space-between;
     }
+    &__toggle {
+      font-size: .6em;
+    }
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: all .3s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 </style>

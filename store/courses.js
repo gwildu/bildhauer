@@ -5,7 +5,7 @@ export default {
     courses: [
       {
         title: 'Offenes Atelier',
-        description: 'Erlebnis am Stein-3D Gestaltung mit Stein und Ton. Ideal um sich in das Thema einzuarbeiten und unverbindlich reinzuschnuppern. Je nach Vorkenntnisse und Interessen erstellen wir Individuell ein Programm ganz für Sie persönlich.  Der erste Abend ist gratis. Keine Anmeldung nötig.',
+        description: 'Erlebnis am Stein-3D Gestaltung mit Stein und Ton. Ideal um sich in das Thema einzuarbeiten und unverbindlich reinzuschnuppern. Je nach Vorkentnissen und Interessen erstellen wir individuell ein Programm ganz für Sie persönlich.  Der erste Abend ist gratis. Keine Anmeldung nötig.',
         dates: [
           {date: new Date(2017, 8, 4)},
           {date: new Date(2017, 9, 2)},
@@ -20,7 +20,11 @@ export default {
         datesAdditionalDescription: 'Juni bis August machen wir Pause. Im September werden wir wieder beginnen.',
         costs: [
           {
-            description: 'Kursgebühr pro Abend',
+            description: 'Erster Abend',
+            amount: 'Gratis'
+          },
+          {
+            description: 'Kursgebühr pro weiteren Abend',
             amount: 45
           },
           {
@@ -29,7 +33,7 @@ export default {
           },
           {
             description: 'Staubmasken',
-            amount: 'nach Bedarf'
+            amount: 'Nach Bedarf'
           }
         ]
       },

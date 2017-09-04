@@ -16,6 +16,9 @@ time, mark, audio, video {
 html {
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
+  @media screen and (max-width: 600px){
+    font-size: 18px;
+  }
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;

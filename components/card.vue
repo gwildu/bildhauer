@@ -21,6 +21,9 @@
     margin: 0 auto 30px auto;
     padding: 30px;
     width: 100%;
+    @media screen and (max-width: 600px){
+      padding: 5px;
+    }
     &--no-padding {
       padding: 0;
     }

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <gwi-collapsible :initialIsVisible="true">
+    <gwi-collapsible
+      :initialIsVisible="true"
+      id="courses"
+    >
     <h2
       slot="header"
       class="bi-text__title bi-text__title--2"
@@ -24,6 +27,7 @@
         </gwi-card>
       </li>
     </ul>
+    <p>Kontaktieren Sie uns <a href="">hier</a> für weitere Informationen oder um Fragen zu klären</p>
     </gwi-collapsible>
   </div>
 </template>

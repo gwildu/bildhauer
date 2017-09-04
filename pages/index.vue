@@ -22,7 +22,8 @@
       return {
         title: 'Kurse',
         meta: [
-          { vmid: 'robots', name: 'robots', content: 'noindex, nofollow' }
+          { vmid: 'robots', name: 'robots', content: 'noindex, nofollow' },
+          { vmid: 'viewport', name: 'viewport', content: 'width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no' }
         ]
       }
     }

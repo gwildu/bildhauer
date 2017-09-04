@@ -1,6 +1,6 @@
 <template>
   <div class="bi-details">
-    <gwi-collapsible>
+    <gwi-collapsible id="details">
       <h2
         slot="header"
         class="bi-text__title bi-text__title--2"
@@ -13,9 +13,9 @@
           Steinbildhauen ist eine urzeitlich anmutende Tätigkeit und wir können mit Geduld
           und Vorstellungskraft eine neue Form entwickeln. Die Kurse sind für Neueinsteiger
           aber auch für Fortgeschrittene, die ihre eigenen gestalterischen Ideen mit unserer
-          individuellen Begleitung verwirklichen wollen!
+          individuellen Begleitung verwirklichen wollen.
           <br/>
-          Die erste Begegnung mit dem Stein, ist eine grossartige Erfahrung! In unserem
+          Die erste Begegnung mit dem Stein, ist eine grossartige Erfahrung. In unserem
           Atelier erfahren Sie mehr über die Techniken der Steinbearbeitung und über
           das Wesen der Skulptur: Anfänger werden Schritt für Schritt so angeleitet, dass
           sie bereits nach relativ kurzer Zeit mit dem Werkzeug am Stein erste Erfolge
