@@ -29,12 +29,25 @@
           Es kann auch auf individuelle Wünsche eingegangen werden. Gerne beraten wir sie
           und organisieren Ihnen wenn nötig ein geeignetes Material. Einfachere Materialien
           sind bereits ab ca. 100.-- Fr. möglich.</p>
-        <h3 class="bi-text__title bi-text__title--3">Werkzeuge</h3>
-        <p>Geeignetes Werkzeug steht zur Verfügung. Wir arbeiten vorwiegend mit handwerklichen
-          Werkzeugen. Punktuell können bei Bedarf auch elektrisch betriebene Maschinen
-          eingesetzt werden. Manche Kursteilnehmer bevorzugen eigenes Werkzeug. Gerne sind
-          wir behilflich bei der Beschaffung von geeigneten Meisseln, Fäusteln und anderen
-          Utensilien.</p>
+        <gwi-text-media
+          class="bi-tools gwi-card gwi-card--1"
+          text-position="left"
+        >
+          <div class="bi-tools__text" slot="text">
+            <h3 class="bi-text__title bi-text__title--3 bi-tools__title">Werkzeuge</h3>
+            <ul class="bi-list--dashed">
+              <li>Geeignetes Werkzeug steht zur Verfügung</li>
+              <li>Wir arbeiten vorwiegend mit handwerklichen Werkzeugen</li>
+              <li>Punktuell können bei Bedarf auch elektrisch betriebene Maschinen eingesetzt werden</li>
+              <li>Manche Kursteilnehmer bevorzugen eigenes Werkzeug. Gerne sind wir behilflich bei der Beschaffung von geeigneten Meisseln, Fäusteln und anderen Utensilien</li>
+            </ul>
+          </div>
+          <img
+            class="bi-tools__image"
+            slot="media"
+            src="/media/tools.jpg"
+          />
+        </gwi-text-media>
         <h3 class="bi-text__title bi-text__title--3">Diverses</h3>
         <p>
           Parkplätze stehen zur Verfügung. Das Atelier ist mit dem ÖV von Wil und Uzwil
@@ -55,13 +68,45 @@
 
 <script>
   import gwiCollapsible from './collapsible.vue'
+  import gwiTextMedia from './text-media.vue'
   export default {
     components: {
-      'gwi-collapsible': gwiCollapsible
+      'gwi-collapsible': gwiCollapsible,
+      'gwi-text-media': gwiTextMedia
     }
   }
 </script>
 
 <style lang="scss">
+  .bi-tools {
+    margin-top: 30px;
 
+    &__text {
+      li {
+        font-size: 24px;
+        margin-bottom: .5em;
+      }
+    }
+
+    &__title {
+      margin-top: 0 !important;
+    }
+
+    &__image {
+      width: 50%;
+      display: block;
+    }
+  }
+  .bi-list {
+    &--dashed {
+      li {
+        text-indent: -1.5em ;
+        margin-left: 1.5em;
+        &:before {
+          content: '–';
+          margin-right: 1em;
+        }
+      }
+    }
+  }
 </style>

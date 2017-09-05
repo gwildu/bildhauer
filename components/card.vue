@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{'bi-card--no-padding': noPadding, ['bi-card bi-card--' + level]: true}"
+    :class="{'gwi-card--no-padding': noPadding, ['gwi-card gwi-card--' + level]: true}"
   >
     <slot/>
   </div>
@@ -15,7 +15,7 @@
 <style lang="scss">
   @import '../layouts/styles/variables';
   @import '../layouts/styles/mixins';
-  .bi-card {
+  .gwi-card {
     background: white;
     border-radius: $border__radius--main;
     margin: 0 auto 30px auto;
