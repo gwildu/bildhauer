@@ -31,11 +31,16 @@
 <style lang="scss">
   @import '../layouts/styles/variables';
   .bi-costs {
-    max-width: 600px;
+    max-width: 100%;
 
     @media screen and (max-width: 600px){
       &__row {
         border-bottom: 1px dotted $color__line--table;
+
+        @media screen and (max-width: 600px) {
+          display: flex;
+          flex-direction: column;
+        }
         &:last-of-type {
           border-color: transparent;
         }
@@ -51,6 +56,11 @@
       white-space: nowrap;
       text-align: right;
       padding-left: 20px;
+      @media screen and (max-width: 600px) {
+        text-align: left;
+        padding-left: 0;
+        font-weight: 600;
+      }
     }
 
   }
