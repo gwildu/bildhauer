@@ -31,7 +31,7 @@
 <style lang="scss">
   @import '../layouts/styles/variables';
   .bi-costs {
-    max-width: 100%;
+    min-width: 100%;
 
     @media screen and (max-width: 600px){
       &__row {

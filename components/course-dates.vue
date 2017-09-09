@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="bi-course-dates">
     <h4 class="bi-text__title bi-text__title--4">Kursdaten</h4>
     <ul
-      class="bi-course-dates"
+      class="bi-course-dates__list"
       v-if="dates.length > 0"
     >
       <li
@@ -35,9 +35,11 @@
 <style lang="scss">
 
   .bi-course-dates {
-    /*list-style-type: disc;*/
-    /*padding-left: 20px;*/
     margin-bottom: 1em;
+
+    &__list {
+      margin-bottom: 1em;
+    }
 
     &__date {
       line-height: 1.4;

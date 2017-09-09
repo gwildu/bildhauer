@@ -9,14 +9,14 @@
       <span slot="toggleOff">Details ausblenden...</span>
       <div slot="content">
         <gwi-text-media img="/media/details.jpg" element-opacity=".6">
-          <p>Viele Menschen blicken mit Bewunderung auf Steinskulpturen, welche Bildhauer
+          <p class="gwi-text-media__element">Viele Menschen blicken mit Bewunderung auf Steinskulpturen, welche Bildhauer
             erschaffen haben und fragen sich, wie solche Werke entstehen.
             Steinbildhauen ist eine urzeitlich anmutende Tätigkeit und wir können mit Geduld
             und Vorstellungskraft eine neue Form entwickeln. Die Kurse sind für Neueinsteiger
             aber auch für Fortgeschrittene, die ihre eigenen gestalterischen Ideen mit unserer
             individuellen Begleitung verwirklichen wollen.
           </p>
-          <p>
+          <p class="gwi-text-media__element">
             Die erste Begegnung mit dem Stein, ist eine grossartige Erfahrung. In unserem
             Atelier erfahren Sie mehr über die Techniken der Steinbearbeitung und über
             das Wesen der Skulptur: Anfänger werden Schritt für Schritt so angeleitet, dass
@@ -30,7 +30,7 @@
         </gwi-text-media>
         <h3 class="bi-text__title bi-text__title--3">Materialien</h3>
         <gwi-text-media img="/media/materials.jpg">
-          <p>Es stehen verschiedene Materialien in unterschiedlichen Formaten zur Verfügung.
+          <p class="gwi-text-media__element">Es stehen verschiedene Materialien in unterschiedlichen Formaten zur Verfügung.
             Es kann auch auf individuelle Wünsche eingegangen werden. Gerne beraten wir sie
             und organisieren Ihnen wenn nötig ein geeignetes Material. Einfachere Materialien
             sind bereits ab ca. 100.-- Fr. möglich.
@@ -44,10 +44,10 @@
         >
           <div class="bi-tools__text">
             <ul>
-              <li>Geeignetes Werkzeug steht zur Verfügung</li>
-              <li>Wir arbeiten vorwiegend mit handwerklichen Werkzeugen</li>
-              <li>Punktuell können bei Bedarf auch elektrisch betriebene Maschinen eingesetzt werden</li>
-              <li>Manche Kursteilnehmer bevorzugen eigenes Werkzeug. Gerne sind wir behilflich bei der Beschaffung von geeigneten Meisseln, Fäusteln und anderen Utensilien</li>
+              <li class="gwi-text-media__element">Geeignetes Werkzeug steht zur Verfügung</li>
+              <li class="gwi-text-media__element">Wir arbeiten vorwiegend mit handwerklichen Werkzeugen</li>
+              <li class="gwi-text-media__element">Punktuell können bei Bedarf auch elektrisch betriebene Maschinen eingesetzt werden</li>
+              <li class="gwi-text-media__element">Manche Kursteilnehmer bevorzugen eigenes Werkzeug. Gerne sind wir behilflich bei der Beschaffung von geeigneten Meisseln, Fäusteln und anderen Utensilien</li>
             </ul>
           </div>
         </gwi-text-media>

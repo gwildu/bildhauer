@@ -9,7 +9,7 @@
           background-image: url("{{portraitImage}}");
         }
       }
-      .gwi-text-media-{{this.id}} .gwi-text-media__text > * {
+      .gwi-text-media-{{this.id}} .gwi-text-media__element {
         background-color: rgba(255, 255, 255, {{elementOpacity}});
       }
     </style>
@@ -70,25 +70,22 @@
     background-size: cover;
     background-position: center;
 
-    @media screen and (max-width: 820px) {
-        }
-
     &__text {
       padding: 40px;
 
       @media screen and (max-width: 600px) {
         padding: 20px;
       }
+    }
 
-      &>* {
-        @include card-frame(5);
-        padding: 15px;
-        margin-bottom: 1em;
-        font-size: 24px;
+    &__element {
+      @include card-frame(5);
+      padding: 15px;
+      margin-bottom: 1em;
+      font-size: 24px;
 
-        &:last-child {
-          margin-bottom: 0 !important;
-        }
+      &:last-child {
+        margin-bottom: 0 !important;
       }
     }
   }
