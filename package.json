@@ -13,7 +13,8 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "yarn build:images && nuxt build",
+    "build:images": "imagemin media/images/**/**.jpg --out-dir static/media/ --plugin jpeg-recompress",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
@@ -21,10 +22,13 @@
     "deploy": "now"
   },
   "dependencies": {
+    "markdown": "^0.5.0",
+    "marked": "^0.3.6",
     "nuxt": "^1.0.0-rc3",
     "raf": "^3.3.2",
     "scroll-to-element": "^2.0.0",
-    "tween": "^0.9.0"
+    "tween": "^0.9.0",
+    "vue": "^2.4.3"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -38,7 +42,6 @@
     "eslint-plugin-standard": "^3.0.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
-    "vue-markdown-loader": "^2.2.1",
     "vue-style-loader": "^3.0.1"
   }
 }

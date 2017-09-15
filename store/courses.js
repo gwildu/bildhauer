@@ -35,11 +35,15 @@ export default {
             description: 'Staubmasken',
             amount: 'Nach Bedarf'
           }
-        ]
+        ],
+        contact: 'Haben Sie offene Fragen? Nehmen Sie mit uns [Kontakt](http://bildhauer.sg/index.php/ueber-uns-28) auf',
+        image: '/media/atelier.jpg'
       },
       {
         title: 'Workshop',
-        description: 'Für Fortgeschrittene gibt es die Möglichkeit individuelle Kurszeiten und individuelle  Betreuung zu vereinbaren.'
+        description: 'Für Fortgeschrittene gibt es die Möglichkeit individuelle Kurszeiten und individuelle  Betreuung zu vereinbaren.',
+        contact: 'Haben Sie offene Fragen? Nehmen Sie mit uns [Kontakt](http://bildhauer.sg/index.php/ueber-uns-28) auf',
+        image: '/media/workshop.jpg'
       }
     ]
   },

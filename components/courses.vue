@@ -13,25 +13,24 @@
     <ul slot="content">
       <li v-for="course, index in bi_courses">
         <h3 class="bi-text__title bi-text__title--3">{{course.title}}</h3>
-        <gwi-text-media :img="getCourseImage(index)" element-opacity=".6">
+        <gwi-text-media :img="course.image" element-opacity=".6">
           <div class="bi-course gwi-text-media__element">
-            <p>{{course.description}}</p>
-            <p><gwi-markdown :markdown="markdown"/></p>
+            <gwi-markdown :input="course.description" />
             <bi-course-dates
               v-if="course.dates"
               :dates="course.dates"
               :additionalDescription="course.datesAdditionalDescription"
             ></bi-course-dates>
             <bi-course-costs
-              v-if="course.costs"
+              v-if="course.costs && course.costs.length"
               :costs="course.costs"
             ></bi-course-costs>
+            <gwi-markdown :input="course.contact" />
           </div>
 
         </gwi-text-media>
       </li>
     </ul>
-    <p>Kontaktieren Sie uns <a href="">hier</a> für weitere Informationen oder um Fragen zu klären</p>
     </gwi-collapsible>
   </div>
 </template>
@@ -47,7 +46,6 @@
 
   export default {
     components: {
-      GwiMarkdown,
       'bi-course-dates': courseDates,
       'bi-course-costs': courseCosts,
       'gwi-collapsible': gwiCollapsible,
@@ -59,15 +57,6 @@
       ...mapGetters([
         'bi_courses'
       ])
-    },
-    methods: {
-      getCourseImage (index) {
-        const map = [
-          '/media/atelier.jpg',
-          '/media/workshop.jpg'
-        ]
-        return map[index]
-      }
     }
   }
 </script>
