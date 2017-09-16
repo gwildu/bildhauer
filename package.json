@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "yarn build:images && nuxt build",
+    "build": "nuxt build",
     "optimizeimages": "imagemin media/images/**/**.jpg --out-dir static/media/ --plugin jpeg-recompress",
     "start": "nuxt start",
     "generate": "nuxt generate",
