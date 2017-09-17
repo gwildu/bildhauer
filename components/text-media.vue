@@ -84,6 +84,10 @@
       margin-bottom: 1em;
       font-size: 24px;
 
+      @media screen and (max-width: 600px) {
+        font-size: 18px;
+      }
+
       &:last-child {
         margin-bottom: 0 !important;
       }
