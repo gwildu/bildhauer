@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "optimizeimages": "imagemin media/images/**/**.jpg --out-dir static/media/ --plugin jpeg-recompress",
+    "optimizeimages": "./node_modules/.bin/imagemin media/images/**/**.jpg --out-dir static/media/ --plugin jpeg-recompress",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
@@ -40,6 +40,8 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-jpeg-recompress": "^5.1.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "vue-style-loader": "^3.0.1"
