@@ -2,11 +2,11 @@
   <div>
     <style>
       .gwi-text-media-{{this.id}} {
-        background-image: url("{{img}}");
+        background-image: url({{img}});
       }
       @media screen and (max-width: 820px) {
         .gwi-text-media-{{this.id}} {
-          background-image: url("{{portraitImage}}");
+          background-image: url({{portraitImage}});
         }
       }
       .gwi-text-media-{{this.id}} .gwi-text-media__element {
