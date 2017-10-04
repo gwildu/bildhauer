@@ -8,7 +8,10 @@
       <span slot="toggleOn">Details einblenden...</span>
       <span slot="toggleOff">Details ausblenden...</span>
       <div slot="content">
-        <p>Die Kurse werden von Andreas Rickenbacher durchgeführt</p>
+        <gwi-card no-padding="true" level="1" class="bi-instructor__intro">
+          <p class="bi-intro__text">Die Kurse werden von Andreas Rickenbacher durchgeführt</p>
+          <img class="bi-instructor__image" src="/media/instructor.jpg" />
+        </gwi-card>
         <bi-cv></bi-cv>
       </div>
     </gwi-collapsible>
@@ -18,13 +21,41 @@
 <script>
   import biCv from './cv.vue'
   import gwiCollapsible from './collapsible.vue'
+  import gwiCard from './card.vue'
 
   export default {
     components: {
       'bi-cv': biCv,
-      'gwi-collapsible': gwiCollapsible
+      'gwi-collapsible': gwiCollapsible,
+      'gwi-card': gwiCard
     }
   }
 </script>
 
-<style></style>
+<style lang="scss">
+  .bi-instructor {
+
+    &__intro {
+      display: flex;
+      align-items: center;
+    }
+
+    &__image {
+      width: 35%;
+      max-width: 500px;
+      @media screen and (max-width: 600px) {
+        width: 55%;
+      }
+    }
+  }
+  .bi-intro {
+    &__text {
+      padding: 40px;
+      font-size: 24px;
+      @media screen and (max-width: 600px) {
+        padding: 5px;
+        font-size: 18px;
+      }
+    }
+  }
+</style>

@@ -2,13 +2,15 @@
   <div>
     <h4 class="bi-text__title bi-text__title--4">Kosten</h4>
     <table class="bi-costs">
-      <tr
-        class="bi-costs__row"
-        v-for="entry in costs"
-      >
-        <td class="bi-costs__cell bi-costs__description">{{entry.description}}</td>
-        <td class="bi-costs__cell bi-costs__amount">{{formatPrice(entry.amount)}}</td>
-      </tr>
+      <tbody>
+        <tr
+          class="bi-costs__row"
+          v-for="cost in costs"
+        >
+          <td class="bi-costs__cell bi-costs__description">{{cost.description}}</td>
+          <td class="bi-costs__cell bi-costs__amount">{{formatPrice(cost.amount)}}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -31,11 +33,17 @@
 <style lang="scss">
   @import '../layouts/styles/variables';
   .bi-costs {
-    max-width: 600px;
+    min-width: 100%;
+    margin-bottom: .75em;
 
     @media screen and (max-width: 600px){
       &__row {
         border-bottom: 1px dotted $color__line--table;
+
+        @media screen and (max-width: 600px) {
+          display: flex;
+          flex-direction: column;
+        }
         &:last-of-type {
           border-color: transparent;
         }
@@ -51,6 +59,11 @@
       white-space: nowrap;
       text-align: right;
       padding-left: 20px;
+      @media screen and (max-width: 600px) {
+        text-align: left;
+        padding-left: 0;
+        font-weight: 600;
+      }
     }
 
   }

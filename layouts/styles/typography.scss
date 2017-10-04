@@ -68,4 +68,7 @@ br {
 }
 p {
   margin-bottom: .75em;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

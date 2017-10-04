@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{'bi-card--no-padding': noPadding, ['bi-card bi-card--' + level]: true}"
+    :class="{'gwi-card--no-padding': noPadding, ['gwi-card gwi-card--' + level]: true}"
   >
     <slot/>
   </div>
@@ -14,34 +14,33 @@
 
 <style lang="scss">
   @import '../layouts/styles/variables';
-  @import '../layouts/styles/mixins';
-  .bi-card {
-    background: white;
-    border-radius: $border__radius--main;
+  @import '../layouts/styles/gwi-mixins';
+  .gwi-card {
+    background-color: white;
     margin: 0 auto 30px auto;
     padding: 30px;
     width: 100%;
+    /*overflow: hidden;*/
     @media screen and (max-width: 600px){
       padding: 5px;
     }
     &--no-padding {
       padding: 0;
     }
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     &--1 {
-      @include elevation(1);
+      @include card-frame(1);
     }
     &--2 {
-      @include elevation(2);
+      @include card-frame(2);
     }
     &--3 {
-      @include elevation(3);
+      @include card-frame(3);
     }
     &--4 {
-      @include elevation(4);
+      @include card-frame(4);
     }
     &--5 {
-      @include elevation(5);
+      @include card-frame(5);
     }
   }
 
