@@ -37,15 +37,12 @@
     &__date {
       white-space: nowrap;
       padding: 15px 15px 15px 12px;
-      writing-mode: sideways-lr;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
       width: 50px;
       background: $color__background--dark;
       color: $color__text--reverse;
       text-align: center;
-      @media screen and (max-width: 600px) {
-        writing-mode: horizontal-tb;
-        padding: 15px 5px;
-      }
     }
     &__content {
       padding: 15px;
