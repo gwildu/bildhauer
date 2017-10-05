@@ -1,14 +1,18 @@
 <template>
-  <div v-html="compiled" class="gwi-markup"></div>
+  <div v-html="output" class="gwi-markup"></div>
 </template>
 
 <script>
-  import marked from 'marked'
   export default {
     props: ['input'],
     computed: {
-      compiled () {
-        return marked(this.input)
+      output () {
+        return this.enrichMarkup(this.input)
+      }
+    },
+    methods: {
+      enrichMarkup (raw) {
+        return raw.replace('<a ', '<a class="bi-text__link" ')
       }
     }
   }

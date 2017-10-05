@@ -25,6 +25,7 @@
               v-if="course.costs && course.costs.length"
               :costs="course.costs"
             ></bi-course-costs>
+            <gwi-markdown :input="course.where" />
             <gwi-markdown :input="course.contact" />
           </div>
 
