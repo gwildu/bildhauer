@@ -43,12 +43,19 @@
     &__image {
       width: 35%;
       max-width: 500px;
+      @media screen and (max-width: 600px) {
+        width: 55%;
+      }
     }
   }
   .bi-intro {
     &__text {
       padding: 40px;
       font-size: 24px;
+      @media screen and (max-width: 600px) {
+        padding: 5px;
+        font-size: 18px;
+      }
     }
   }
 </style>

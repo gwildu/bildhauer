@@ -51,10 +51,10 @@ export default {
       },
       {
         from: {
-          year: 'ab'
+          year: 2005
         },
         to: {
-          year: 2005
+          year: ''
         },
         title: 'Erste selbständige Aufträge'
       },

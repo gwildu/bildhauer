@@ -42,6 +42,10 @@
       background: $color__background--dark;
       color: $color__text--reverse;
       text-align: center;
+      @media screen and (max-width: 600px) {
+        writing-mode: horizontal-tb;
+        padding: 15px 5px;
+      }
     }
     &__content {
       padding: 15px;

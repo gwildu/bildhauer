@@ -8,7 +8,7 @@
       <span slot="toggleOn">Details einblenden...</span>
       <span slot="toggleOff">Details ausblenden...</span>
       <div slot="content">
-        <gwi-text-media img="/media/details.jpg" element-opacity=".65">
+        <gwi-text-media img="/media/details.jpg" element-opacity=".75">
           <p class="gwi-text-media__element">Viele Menschen blicken mit Bewunderung auf Steinskulpturen, welche Bildhauer
             erschaffen haben und fragen sich, wie solche Werke entstehen.
             Steinbildhauen ist eine urzeitlich anmutende Tätigkeit und wir können mit Geduld
