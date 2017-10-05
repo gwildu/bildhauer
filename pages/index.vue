@@ -23,7 +23,8 @@
         title: 'Kurse',
         meta: [
           { vmid: 'robots', name: 'robots', content: 'index, follow' },
-          { vmid: 'viewport', name: 'viewport', content: 'width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no' }
+          { vmid: 'viewport', name: 'viewport', content: 'width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no' },
+          { vmid: 'google-site-verification', name: 'google-site-verification', content: 'ph2wPHUsnc0iTh8YSan2KiJermamTOrEVOGPPbthrYI' }
         ]
       }
     }
