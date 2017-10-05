@@ -83,7 +83,7 @@
       padding: 15px;
       margin-bottom: 1em;
       font-size: 24px;
-      text-shadow: 2px 2px 2px rgba(255, 255, 255, .9) !important;
+      text-shadow: 2px 2px 2px rgba(255, 255, 255, .7) !important;
 
       @media screen and (max-width: 600px) {
         font-size: 18px;
