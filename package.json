@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "optimizeimages": "./node_modules/.bin/imagemin media/images/**/**.jpg --out-dir static/media/ --plugin jpeg-recompress",
+    "optimizeimages": "./node_modules/.bin/imagemin media/images/**/**.jpg --out-dir assets/images/ --plugin jpeg-recompress",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
