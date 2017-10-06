@@ -10,7 +10,7 @@
       <div slot="content">
         <gwi-card no-padding="true" level="1" class="bi-instructor__intro">
           <p class="bi-intro__text">Die Kurse werden von Andreas Rickenbacher durchgeführt</p>
-          <img class="bi-instructor__image" src="/media/instructor.jpg" />
+          <img class="bi-instructor__image" src="~/assets/images/instructor.jpg" />
         </gwi-card>
         <bi-cv></bi-cv>
       </div>

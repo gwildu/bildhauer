@@ -1,5 +1,7 @@
 'use strict'
 import marked from 'marked'
+import atelierImage from '~/assets/images/atelier.jpg'
+import workshopImage from '~/assets/images/workshop.jpg'
 
 export default {
   state: {
@@ -39,14 +41,14 @@ export default {
         ],
         where: marked('Der Kurs findet bei uns im Atelier statt. Die Adresse und einen Lageplan finden Sie [hier](http://www.bildhauer.sg/index.php/ueber-uns-28.html).'),
         contact: marked('Haben Sie offene Fragen? Nehmen Sie mit uns [Kontakt](http://bildhauer.sg/index.php/ueber-uns-28) auf'),
-        image: '/media/atelier.jpg'
+        image: atelierImage
       },
       {
         title: 'Workshop',
         description: marked('Für Fortgeschrittene gibt es die Möglichkeit individuelle Kurszeiten und individuelle  Betreuung zu vereinbaren.'),
         where: marked('Der Kurs findet bei uns im Atelier statt. Die Adresse und einen Lageplan finden Sie [hier](http://www.bildhauer.sg/index.php/ueber-uns-28.html).'),
         contact: marked('Haben Sie offene Fragen? Nehmen Sie mit uns [Kontakt](http://bildhauer.sg/index.php/ueber-uns-28#kontakt-formular) auf'),
-        image: '/media/workshop.jpg'
+        image: workshopImage
       }
     ]
   },
