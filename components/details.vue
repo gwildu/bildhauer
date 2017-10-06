@@ -8,7 +8,7 @@
       <span slot="toggleOn">Details einblenden...</span>
       <span slot="toggleOff">Details ausblenden...</span>
       <div slot="content">
-        <gwi-text-media img="/media/details.jpg" element-opacity=".75">
+        <gwi-text-media :img="images.details" :portraitImg="images.detailsPortrait" element-opacity=".75">
           <p class="gwi-text-media__element">Viele Menschen blicken mit Bewunderung auf Steinskulpturen, welche Bildhauer
             erschaffen haben und fragen sich, wie solche Werke entstehen.
             Steinbildhauen ist eine urzeitlich anmutende Tätigkeit und wir können mit Geduld
@@ -29,7 +29,7 @@
 
         </gwi-text-media>
         <h3 class="bi-text__title bi-text__title--3">Materialien</h3>
-        <gwi-text-media img="/media/materials.jpg">
+        <gwi-text-media :img="images.materials">
           <p class="gwi-text-media__element">Es stehen verschiedene Materialien in unterschiedlichen Formaten zur Verfügung.
             Es kann auch auf individuelle Wünsche eingegangen werden. Gerne beraten wir sie
             und organisieren Ihnen wenn nötig ein geeignetes Material. Einfachere Materialien
@@ -39,7 +39,8 @@
         <h3 class="bi-text__title bi-text__title--3 bi-tools__title">Werkzeuge</h3>
         <gwi-text-media
           class="bi-tools"
-          img="/media/tools.jpg"
+          :img="images.tools"
+          :imgPortrait="images.toolsPortrait"
           hasPortrait="true"
         >
           <div class="bi-tools__text">
@@ -72,10 +73,27 @@
 <script>
   import gwiCollapsible from './collapsible.vue'
   import gwiTextMedia from './text-media.vue'
+  import toolsImage from '~/assets/images/tools.jpg'
+  import toolsPortraitImage from '~/assets/images/tools_portrait.jpg'
+  import materialsImage from '~/assets/images/materials.jpg'
+  import detailsImage from '~/assets/images/details.jpg'
+  import detailsPortraitImage from '~/assets/images/details_portrait.jpg'
+
   export default {
     components: {
       'gwi-collapsible': gwiCollapsible,
       'gwi-text-media': gwiTextMedia
+    },
+    computed: {
+      images () {
+        return {
+          tools: toolsImage,
+          toolsPortrait: toolsPortraitImage,
+          materials: materialsImage,
+          details: detailsImage,
+          detailsPortrait: detailsPortraitImage
+        }
+      }
     }
   }
 </script>
