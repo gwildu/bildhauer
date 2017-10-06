@@ -35,6 +35,7 @@
     },
     props: {
       img: String,
+      imgPortrait: String,
       hasPortrait: Boolean,
       elementOpacity: {
         type: String,
@@ -51,10 +52,7 @@
         return pathSegments[pathSegments.length - 1]
       },
       portraitImage () {
-        if (!this.hasPortrait) {
-          return this.img
-        }
-        return `${this.imgParts[0]}_portrait.${this.imgParts[1]}`
+        return this.imgPortrait || this.img
       }
     }
   }
