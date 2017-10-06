@@ -26,6 +26,5 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 requires https://zeit.co/download client to be installed
 
 ```
-now (copyies the stashing url to your clipboard)
-now <ctr><c> alias kurse.bildhauer.sg
+yarn deploy
 ```

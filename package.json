@@ -19,7 +19,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "deploy": "now"
+    "deploy": "now && now alias"
   },
   "dependencies": {
     "marked": "^0.3.6",
@@ -43,5 +43,9 @@
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "vue-style-loader": "^3.0.1"
-  }
+  },
+  "alias": [
+    "kurse.bildhauer.sg",
+    "kurse.bildhauerei-rickenbacher.ch"
+  ]
 }
