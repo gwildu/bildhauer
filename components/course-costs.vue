@@ -1,14 +1,14 @@
 <template>
   <div>
     <h4 class="bi-text__title bi-text__title--4">Kosten</h4>
-    <table class="bi-costs">
+    <table v-if="costs && costs.length > 0" class="bi-costs">
       <tbody>
         <tr
           class="bi-costs__row"
           v-for="cost in costs"
         >
           <td class="bi-costs__cell bi-costs__description">{{cost.description}}</td>
-          <td class="bi-costs__cell bi-costs__amount">{{formatPrice(cost.amount)}}</td>
+          <td class="bi-costs__cell bi-costs__amount">{{cost.amount}}</td>
         </tr>
       </tbody>
     </table>
@@ -17,21 +17,13 @@
 
 <script>
   export default {
-    props: ['costs'],
-    methods: {
-      formatPrice (unformated) {
-        if (typeof unformated === 'string') {
-          return unformated
-        }
-        const formatedNumber = unformated.toFixed(2)
-        return `${formatedNumber} CHF`
-      }
-    }
+    props: ['costs']
   }
 </script>
 
 <style lang="scss">
   @import '../layouts/styles/variables';
+
   .bi-costs {
     min-width: 100%;
     margin-bottom: .75em;

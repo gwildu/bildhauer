@@ -12,7 +12,7 @@
     },
     methods: {
       enrichMarkup (raw) {
-        return raw.replace('<a ', '<a class="bi-text__link" ')
+        return raw ? raw.replace('<a ', '<a class="bi-text__link" ') : ''
       }
     }
   }

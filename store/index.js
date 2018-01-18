@@ -8,9 +8,15 @@ const store = () => new Vuex.Store({
     cv,
     courses
   },
-  state: {},
+  state: {
+    useFlamelink: true
+  },
   getters: {},
-  actions: {},
+  actions: {
+    // fetchFeatureFlags ({commit}) {
+    //
+    // }
+  },
   mutations: {}
 })
 

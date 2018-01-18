@@ -35,5 +35,9 @@ module.exports = {
         })
       }
     }
+  },
+  env: {
+    'FIREBASE_API_KEY': 'AIzaSyAVguu0Qy7u_0yFKX8Cu8OrWH5BNNh3FaQ',
+    'FIREBASE_PROJECT_NAME': 'bildhauer-ce38c'
   }
 }
