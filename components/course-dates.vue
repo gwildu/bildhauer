@@ -1,7 +1,7 @@
 <template>
   <div class="bi-course-dates">
     <h4 class="bi-text__title bi-text__title--4">Kursdaten</h4>
-    <p>Der Kurs findet an folgenden Daten jeweils von 19:00 - 21:00 Uhr statt:</p>
+    <p>Der Kurs findet an folgenden Daten jeweils von 18:00 - 21:00 Uhr statt:</p>
     <ul class="bi-course-dates__list" v-if="dates && dates.length > 0">
       <li
         class="bi-course-dates__date"

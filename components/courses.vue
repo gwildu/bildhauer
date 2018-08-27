@@ -15,9 +15,8 @@
         <h3 class="bi-text__title bi-text__title--3">Offenes Atelier</h3>
         <gwi-text-media :img="atelierImage" element-opacity=".6">
           <div class="bi-course gwi-text-media__element">
-            <p>Erlebnis am Stein-3D Gestaltung mit Stein und Ton. Ideal um sich in das Thema einzuarbeiten und unverbindlich reinzuschnuppern. Je nach Vorkentnissen und Interessen erstellen wir individuell ein Programm ganz für Sie persönlich.  Der erste Abend ist gratis. Keine Anmeldung nötig.</p>
+            <p>Erlebnis am Stein-3D Gestaltung mit Stein und Ton. Ideal um sich in das Thema einzuarbeiten und unverbindlich reinzuschnuppern. Je nach Vorkentnissen und Interessen erstellen wir individuell ein Programm ganz für Sie persönlich.  Der erste Abend ist gratis. Die Besucherzahl ist auf 5 Personen beschränkt. <a href="https://www.bildhauer-stein.ch/index.php/ueber-uns-28.html#f2">Anmeldung</a> ist obligatorisch</a></p>
             <bi-course-dates :dates="openStudioDates" />
-            <p>Juni bis August machen wir Pause. Im September werden wir wieder beginnen.</p>
             <bi-course-costs :costs="openStudioCosts" />
             <p>Der Kurs findet bei uns im Atelier statt. Die Adresse und einen Lageplan finden Sie <a href="http://www.bildhauer.sg/index.php/ueber-uns-28.html">hier</a>.</p>
             <p>Haben Sie offene Fragen? Nehmen Sie mit uns <a href="http://bildhauer.sg/index.php/ueber-uns-28#kontakt-formular">Kontakt</a> auf</p>
