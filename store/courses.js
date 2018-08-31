@@ -15,11 +15,9 @@ export default {
     bindCourses ({commit, rootState}) {
       const bindContent = rootState.useFlamelink ? bindContentFlamelink : bindContentFirebase
       bindContent('openStudioDates', courseDates => {
-        console.log('asdfasd')
         commit('SET_OPEN_STUDIO_DATES', convertFirebaseListIntoArray(courseDates, ['utcDate']))
       })
       bindContent('openStudioCosts', courseCosts => {
-        console.log('asdfasd')
         commit('SET_OPEN_STUDIO_COSTS', convertFirebaseListIntoArray(courseCosts, ['description', 'amount']))
       })
     }
