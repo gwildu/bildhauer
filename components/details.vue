@@ -41,7 +41,7 @@
           class="bi-tools"
           :img="images.tools"
           :imgPortrait="images.toolsPortrait"
-          hasPortrait="true"
+          :hasPortrait="true"
         >
           <div class="bi-tools__text">
             <ul>

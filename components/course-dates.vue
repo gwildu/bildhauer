@@ -1,15 +1,12 @@
 <template>
   <div class="bi-course-dates">
     <h4 class="bi-text__title bi-text__title--4">Kursdaten</h4>
-    <p>Der Kurs findet an folgenden Daten jeweils von 19:00 - 21:00 Uhr statt:</p>
-    <ul
-      class="bi-course-dates__list"
-      v-if="dates.length > 0"
-    >
+    <p>Der Kurs findet an folgenden Daten jeweils von 18:00 - 21:00 Uhr statt:</p>
+    <ul class="bi-course-dates__list" v-if="dates && dates.length > 0">
       <li
         class="bi-course-dates__date"
-        v-for="item in dates"
-      >{{formatDate(item.date)}}</li>
+        v-for="date in dates"
+      >{{formatDate(date)}}</li>
     </ul>
     <gwi-markdown :input="additionalDescription" />
   </div>
@@ -24,13 +21,11 @@
     props: ['dates', 'additionalDescription'],
     methods: {
       formatDate (date) {
-        if (!(date instanceof Date)) {
-          date = new Date(date)
-        }
+        const dateInstance = new Date(date.utcDate)
         const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
-        const day = date.getDate()
-        const month = months[date.getMonth()]
-        const year = date.getFullYear()
+        const day = dateInstance.getDate()
+        const month = months[dateInstance.getMonth()]
+        const year = dateInstance.getFullYear()
         return `${day}. ${month} ${year}`
       }
     }

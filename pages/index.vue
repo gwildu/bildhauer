@@ -1,9 +1,9 @@
 <template>
   <section id="content" class="bi-content">
     <h1 class="bi-text__title bi-text__title--1 bi-text--centered">Kurse<br/>Bildhauerei Rickenbacher</h1>
-    <bi-courses></bi-courses>
-    <bi-details></bi-details>
-    <bi-course-instructor></bi-course-instructor>
+    <bi-courses />
+    <bi-details />
+    <bi-course-instructor />
   </section>
 </template>
 
@@ -11,6 +11,7 @@
   import biCourseInstructor from '../components/course-instructor.vue'
   import biDetails from '../components/details.vue'
   import biCourses from '../components/courses.vue'
+  import {mapActions} from 'vuex'
 
   export default {
     components: {
@@ -32,6 +33,12 @@
           { vmid: 'canonical', rel: 'canonical', href: 'https://kurse.bildhauerei-rickenbacher.ch' }
         ]
       }
+    },
+    methods: {
+      ...mapActions(['bindCourses'])
+    },
+    created () {
+      this.bindCourses()
     }
   }
 </script>
