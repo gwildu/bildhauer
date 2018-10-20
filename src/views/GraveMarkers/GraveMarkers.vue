@@ -1,10 +1,10 @@
 <template>
-  <h1>Bildhauerei Rickenbacher</h1>
+  <h1>Grabmale</h1>
 </template>
 
 <script>
     export default {
-        name: "Home"
+        name: "GraveMarker"
     }
 </script>
 

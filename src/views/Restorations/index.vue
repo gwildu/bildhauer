@@ -1,10 +1,10 @@
 <template>
-  <h1>Bildhauerei Rickenbacher</h1>
+  <router-view></router-view>
 </template>
 
 <script>
     export default {
-        name: "Home"
+        name: "Restorations"
     }
 </script>
 
