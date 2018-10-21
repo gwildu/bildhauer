@@ -1,11 +1,17 @@
 <template>
-  <h1>Bildhauerei Rickenbacher</h1>
+  <Title
+    :markupLevel="1"
+    :stylingLevel="1"
+    :centered="true">Bildhauerei Rickenbacher</Title>
 </template>
 
 <script>
-    export default {
-        name: "Home"
-    }
+import Title from '@/components/common/Title'
+
+export default {
+  name: 'Home',
+  components: { Title }
+}
 </script>
 
 <style scoped>

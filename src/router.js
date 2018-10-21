@@ -19,79 +19,94 @@ export default new Router({
       path: '/', name: 'home', component: Home
     },
     {
-      path: '/restaurationen', name: 'restorations',
+      path: '/restaurationen',
       component: () => import(/* webpackChunkName: "restorations" */ './views/Restorations/index'),
       children: [
         {
           path: '',
+          name: 'restorations',
           component: () => import(/* webpackChunkName: "restorations" */ './views/Restorations/Restorations')
         },
         {
-          path: 'referenzarbeiten', name: 'references',
+          path: 'referenzarbeiten',
+          name: 'references',
           component: () => import(/* webpackChunkName: "restorations" */ './views/Restorations/References.vue')
         },
         {
-          path: 'aktuelle-arbeiten', name: 'currentWork',
+          path: 'aktuelle-arbeiten',
+          name: 'currentWork',
           component: () => import(/* webpackChunkName: "restorations" */ './views/Restorations/CurrentWork')
         },
         {
-          path: 'leistungsspektrum', name: 'rangeOfServices',
+          path: 'leistungsspektrum',
+          name: 'rangeOfServices',
           component: () => import(/* webpackChunkName: "restorations" */ './views/Restorations/RangeOfServices')
         },
         {
-          path: 'unsere-grundsaetze', name: 'ourPrinciples',
+          path: 'unsere-grundsaetze',
+          name: 'ourPrinciples',
           component: () => import(/* webpackChunkName: "restorations" */ './views/Restorations/OurPrinciples')
         }
       ]
     },
     {
-      path: '/grabmale', name: 'graveMarkers',
+      path: '/grabmale',
       component: () => import(/* webpackChunkName: "gravemarkers" */ './views/GraveMarkers'),
       children: [
         {
           path: '',
+          name: 'graveMarkers',
           component: () => import(/* webpackChunkName: "gravemarkers" */ './views/GraveMarkers/GraveMarkers')
         },
         {
-          path: 'entwuerfe-und-skizzen', name: 'sketches',
+          path: 'entwuerfe-und-skizzen',
+          name: 'sketches',
           component: () => import(/* webpackChunkName: "gravemarkers" */ './views/GraveMarkers/Sketches')
         },
         {
-          path: 'aktuelle-lagersteine', name: 'CurrentStockStones',
+          path: 'aktuelle-lagersteine',
+          name: 'CurrentStockStones',
           component: () => import(/* webpackChunkName: "gravemarkers" */ './views/GraveMarkers/CurrentStockStones')
         },
         {
-          path: 'ausgefuehrte-arbeiten', name: 'References',
+          path: 'ausgefuehrte-arbeiten',
+          name: 'References',
           component: () => import(/* webpackChunkName: "gravemarkers" */ './views/GraveMarkers/References')
         },
         {
-          path: 'unsere-grundsaetze', name: 'OurPrinciples',
+          path: 'unsere-grundsaetze',
+          name: 'OurPrinciples',
           component: () => import(/* webpackChunkName: "gravemarkers" */ './views/GraveMarkers/OurPrinciples')
         }
       ]
     },
     {
-      path: '/deko-innen-gartengestaltung', name: 'DecorationInteriorGarden',
+      path: '/deko-innen-gartengestaltung',
       component: () => import(/* webpackChunkName: "decorationInteriorGarden" */ './views/DecorationInteriorGarden'),
       children: [
         {
           path: '',
+          name: 'DecorationInteriorGarden',
           component: () => import(/* webpackChunkName: "decorationInteriorGarden" */ './views/DecorationInteriorGarden/DecorationInteriorGarden')
         },
         {
-          path: 'innengestaltung', name: 'InteriorDesign',
+          path: 'innengestaltung',
+          name: 'InteriorDesign',
           component: () => import(/* webpackChunkName: "decorationInteriorGarden" */ './views/DecorationInteriorGarden/InteriorDesign')
         },
         {
-          path: 'deko', name: 'decoration',
+          path: 'deko',
+          name: 'decoration',
           component: () => import(/* webpackChunkName: "decorationInteriorGarden" */ './views/DecorationInteriorGarden/Decoration')
         },
         {
-          path: 'gartengestaltung', name: 'LandscapeGardening',
+          path: 'gartengestaltung',
+          name: 'LandscapeGardening',
           component: () => import(/* webpackChunkName: "decorationInteriorGarden" */ './views/DecorationInteriorGarden/LandscapeGardening')
         },
         {
-          path: 'bastelmaterial', name: 'HandicraftMaterial',
+          path: 'bastelmaterial',
+          name: 'HandicraftMaterial',
           component: () => import(/* webpackChunkName: "decorationInteriorGarden" */ './views/DecorationInteriorGarden/HandicraftMaterial')
         }
       ]

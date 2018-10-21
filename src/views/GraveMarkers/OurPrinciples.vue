@@ -1,10 +1,16 @@
 <template>
-  <h1>Unsere Grundsätze</h1>
+  <Title
+    :markupLevel="1"
+    :stylingLevel="1"
+    :centered="true">Unsere Grundsätze</Title>
 </template>
 
 <script>
+import Title from '@/components/common/Title'
+
 export default {
-name: "OurPrinciples"
+  name: 'OurPrinciples',
+  components: { Title }
 }
 </script>
 

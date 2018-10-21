@@ -1,10 +1,10 @@
 <template>
-  <h1>Deko / Innen- / Gartengestaltung</h1>
+  <router-view/>
 </template>
 
 <script>
 export default {
-    name: "DecorationInteriorGarden"
+  name: 'Index'
 }
 </script>
 

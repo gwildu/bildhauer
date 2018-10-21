@@ -1,10 +1,16 @@
 <template>
-  <h1>Rechtliche Hinweise</h1>
+  <Title
+    :markupLevel="1"
+    :stylingLevel="1"
+    :centered="true">Rechtliche Hinweise</Title>
 </template>
 
 <script>
+import Title from '@/components/common/Title'
+
 export default {
-name: "Legal"
+  name: 'Legal',
+  components: { Title }
 }
 </script>
 

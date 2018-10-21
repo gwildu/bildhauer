@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <Title
-      :markupLevel="1"
-      :stylingLevel="1"
-      :centered="true">Grabmale</Title>
-  </div>
+  <Title
+    :markupLevel="1"
+    :stylingLevel="1"
+    :centered="true">Deko</Title>
 </template>
 
 <script>
 import Title from '@/components/common/Title'
 
 export default {
-  name: 'GraveMarkers',
+  name: 'Decoration',
   components: { Title }
 }
 </script>
