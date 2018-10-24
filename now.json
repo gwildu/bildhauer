@@ -2,7 +2,7 @@
   "name": "bildhauer-stein.ch",
   "type": "static",
   "static": {
-    "cleanUrls": ["/index.php/**"],
+    "cleanUrls": false,
     "public": "dist",
     "redirects": [
       { "source": "/index.php/restaurationen.html", "destination": "/restaurationen" },
@@ -85,7 +85,7 @@
       }
     ]
   },
-  "alias": "vue-example",
+  "alias": [],
   "files": [
     "dist"
   ]
