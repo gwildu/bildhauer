@@ -85,7 +85,10 @@
       }
     ]
   },
-  "alias": [],
+  "alias": [
+    "bildhauer-stein.ch",
+    "bildhauer.sg"
+  ],
   "files": [
     "dist"
   ]
