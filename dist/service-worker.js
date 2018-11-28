@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.89e2d6ce45b2f99fe24c6cc0fd8a7ddc.js"
+  "/precache-manifest.23c6133f5d3021075724beba06ad3381.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "bildhauer"});
