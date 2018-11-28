@@ -8,6 +8,7 @@ import Contact from './views/Contact'
 import Legal from './views/Legal'
 import Links from './views/Links'
 import Sitemap from './views/Sitemap'
+import Courses from './views/Courses'
 
 Vue.use(Router)
 
@@ -131,6 +132,9 @@ export default new Router({
     },
     {
       path: '/sitemap', name: 'Sitemap', component: Sitemap
+    },
+    {
+      path: '/kurse', name: 'Courses', component: Courses
     }
   ]
 })
