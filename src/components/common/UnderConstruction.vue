@@ -1,10 +1,9 @@
-<template xmlns="http://www.w3.org/1999/html">
+<template>
   <div class="under-construction">
     <div class="content-container">
       <Title>Kontakt</Title>
       <p>
         Tel: 071 951 88 88<br>
-        Fax: 071 951 88 89<br>
         E-Mail: info{at}bildhauer-stein.ch<br>
         <small>(um Spam zu vermeiden veröffentlichen wir die E-Mail Adresse nicht in Klartext. Ersetzen sie in der obigen Adresse {at} mit einem @ Zeichen.)</small>
       </p>

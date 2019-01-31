@@ -1,4 +1,5 @@
 {
+  "version": 1,
   "name": "bildhauer-stein.ch",
   "type": "static",
   "static": {
@@ -87,7 +88,7 @@
   },
   "alias": [
     "bildhauer-stein.ch",
-    "bildhauer.sg"
+    "www.bildhauer-stein.ch"
   ],
   "files": [
     "dist"
