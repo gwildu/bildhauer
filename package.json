@@ -1,54 +1,40 @@
 {
   "name": "bildhauer",
   "version": "0.1.0",
-  "description": "bildhauerei-rickenbacher.ch website",
-  "repository": "https://github.com/gwildu/bildhauer.git",
-  "author": "@gwildu",
-  "license": "None",
   "private": true,
-  "config": {
-    "nuxt": {
-      "port": "8080"
-    }
-  },
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "optimizeimages": "./node_modules/.bin/imagemin media/images/**/**.jpg --out-dir assets/images/ --plugin jpeg-recompress",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint",
-    "deploy": "now && now alias"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
+    "deploy": "yarn build && now && now alias"
   },
   "dependencies": {
-    "config": "^1.28.1",
-    "flamelink": "^0.13.2",
-    "marked": "^0.3.6",
-    "nuxt": "^1.0.0-rc11",
-    "raf": "^3.3.2",
-    "scroll-to-element": "^2.0.0",
-    "tween": "^0.9.0"
+    "flamelink": "^0.19.6",
+    "marked": "^0.5.2",
+    "raf": "^3.4.1",
+    "register-service-worker": "^1.0.0",
+    "scroll-to-element": "^2.0.2",
+    "tween": "^0.9.0",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^3.1.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "imagemin-cli": "^3.0.0",
-    "imagemin-jpeg-recompress": "^5.1.0",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "vue-style-loader": "^3.0.1",
-    "webpack-stats-plugin": "^0.1.5"
-  },
-  "alias": [
-    "kurse.bildhauer.sg",
-    "kurse.bildhauerei-rickenbacher.ch"
-  ]
+    "@cypress/webpack-preprocessor": "^3.0.0",
+    "@vue/cli-plugin-babel": "^3.0.3",
+    "@vue/cli-plugin-e2e-cypress": "^3.0.3",
+    "@vue/cli-plugin-eslint": "^3.0.3",
+    "@vue/cli-plugin-pwa": "^3.0.3",
+    "@vue/cli-plugin-unit-jest": "^3.0.3",
+    "@vue/cli-service": "^3.0.3",
+    "@vue/eslint-config-standard": "^3.0.5",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.17"
+  }
 }

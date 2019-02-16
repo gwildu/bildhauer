@@ -1,17 +1,23 @@
-# dependencies
+.DS_Store
 node_modules
 
-# logs
-npm-debug.log
+/tests/e2e/videos/
+/tests/e2e/screenshots/
 
-# Nuxt build
-.nuxt
+# local env files
+.env.local
+.env.*.local
 
-# Nuxt generate
-dist
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# JetBrains idea folder
-.idea/
-
-# mac metafiles
-.DS_Store
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
