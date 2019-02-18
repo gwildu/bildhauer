@@ -4,6 +4,9 @@
       :markupLevel="1"
       :stylingLevel="1"
       :centered="true">Bildhauerei Rickenbacher</Title>
+    <div class="menu" >
+      <a href="/grabmale/ausgefuehrte-arbeiten">Ausgeführte Arbeiten</a>
+    </div>
     <UnderConstruction />
   </div>
 </template>
@@ -19,5 +22,8 @@ export default {
 </script>
 
 <style scoped>
-
+  .menu {
+    text-align: center;
+    margin-bottom: 60px;
+  }
 </style>
