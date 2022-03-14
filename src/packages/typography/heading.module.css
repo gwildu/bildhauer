@@ -1,0 +1,11 @@
+.mainHeading {
+  font-size: var(--gwi-font-size-main-heading);
+  color: var(--gwi-color-title);
+  margin-bottom: var(--gwi-spacing-heading-main-bottom);
+  margin-top: var(--gwi-spacing-heading-main-top);
+}
+
+.subHeading1 {
+  font-size: var(--gwi-font-size-sub-heading-1);
+  margin-bottom: var(--gwi-spacing-heading-sub-1-bottom);
+}

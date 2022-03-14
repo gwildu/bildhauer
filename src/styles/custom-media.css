@@ -1,0 +1,23 @@
+/* custom media - from viewport up */
+@custom-media --viewport-mobile-small-up (min-width: 0px);
+@custom-media --viewport-mobile-up (min-width: 275px);
+@custom-media --viewport-tablet-up (min-width: 564px);
+@custom-media --viewport-laptop-up (min-width: 900px);
+@custom-media --viewport-desktop-up (min-width: 1188px);
+@custom-media --viewport-desktop-big-up (min-width: 1920px);
+
+/* custom media - from viewport down */
+@custom-media --viewport-desktop-big-down (max-width: 100000px);
+@custom-media --viewport-desktop-down (max-width: 1919px);
+@custom-media --viewport-laptop-down (max-width: 1187px);
+@custom-media --viewport-tablet-down (max-width: 899px);
+@custom-media --viewport-mobile-down (max-width: 563px);
+@custom-media --viewport-mobile-small-down (max-width: 274px);
+
+/* custom media - single viewports */
+@custom-media --viewport-mobile-small (min-width: 0px) and (max-width: 274px);
+@custom-media --viewport-mobile (min-width: 275px) and (max-width: 563px);
+@custom-media --viewport-tablet (min-width: 564px) and (max-width: 899px);
+@custom-media --viewport-laptop (min-width: 900px) and (max-width: 1187px);
+@custom-media --viewport-desktop (min-width: 1188px) and (max-width: 1919px);
+@custom-media --viewport-dektop-big (min-width: 1920px) and (max-width: 100000px);
