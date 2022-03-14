@@ -1,0 +1,68 @@
+:root {
+  /* colors */
+  --gwi-color-light: #faf9f8;
+  --gwi-color-gold: #c39d00;
+  --gwi-color-dark-brown: #5d4519;
+  --gwi-color-middle-blue: #056bdc;
+  --gwi-color-dark-blue: #044389;
+
+  --gwi-color-background-body: var(--gwi-color-light);
+  --gwi-color-background-strong: var(--gwi-color-gold);
+  --gwi-color-primary: var(--gwi-color-dark-brown);
+  --gwi-color-link: var(--gwi-color-middle-blue);
+  --gwi-color-link-highlight: var(--gwi-color-dark-blue);
+
+  --gwi-color-text: var(--gwi-color-primary);
+  --gwi-color-title: var(--gwi-color-gold);
+
+  /* grid base variables */
+  --gwi-grid-base: 1188px;
+  --gwi-grid-spacing-base: 9px;
+
+  /* grid cells */
+  --gwi-grid-cell-12th: calc(
+    (var(--gwi-grid-base) - 13 * var(--gwi-grid-spacing-base)) / 12
+  );
+  --gwi-grid-cell-9th: calc(
+    (var(--gwi-grid-base) - 10 * var(--gwi-grid-spacing-base)) / 9
+  );
+  --gwi-grid-cell-8th: calc(
+    (var(--gwi-grid-base) - 9 * var(--gwi-grid-spacing-base)) / 8
+  );
+  --gwi-grid-cell-6th: calc(
+    (var(--gwi-grid-base) - 7 * var(--gwi-grid-spacing-base)) / 6
+  );
+  --gwi-grid-cell-4th: calc(
+    (var(--gwi-grid-base) - 5 * var(--gwi-grid-spacing-base)) / 4
+  );
+  --gwi-grid-cell-1-3: calc(
+    (var(--gwi-grid-base) - 4 * var(--gwi-grid-spacing-base)) / 3
+  );
+  --gwi-grid-cell-1-2: calc(
+    (var(--gwi-grid-base) - 3 * var(--gwi-grid-spacing-base)) / 2
+  );
+
+  --gwi-spacing-1: var(--gwi-grid-spacing-base);
+  --gwi-spacing-2: calc(2 * var(--gwi-grid-spacing-base));
+  --gwi-spacing-3: calc(3 * var(--gwi-grid-spacing-base));
+  --gwi-spacing-heading-main-top: calc(2 * var(--gwi-grid-spacing-base));
+  --gwi-spacing-heading-main-bottom: calc(4 * var(--gwi-grid-spacing-base));
+  --gwi-spacing-heading-sub-1-bottom: calc(2 * var(--gwi-grid-spacing-base));
+  --gwi-spacing-text-default: var(--gwi-grid-spacing-base);
+  --gwi-spacing-paragraph: var(--gwi-spacing-text-default);
+  --gwi-spacing-text-list: calc(2 * var(--gwi-spacing-text-default));
+
+  /* grid margins */
+  --gwi-grid-margin-default: var(--gwi-spacing-3);
+  --gwi-grid-margin-small: var(--gwi-spacing-1);
+
+  /* grid paddings */
+  --gwi-grid-padding-default: var(--gwi-spacing-1);
+  --gwi-component-padding-big: var(--gwi-spacing-3);
+
+  /* typography */
+  --gwi-font-size-default: 1rem;
+  --gwi-font-size-main-heading: 2rem;
+  --gwi-font-size-sub-heading-1: 1.5rem;
+  --gwi-font-size-menu-toggle: 3rem;
+}

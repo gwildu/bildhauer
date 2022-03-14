@@ -1,0 +1,4 @@
+.paragraph {
+  hyphens: auto;
+  margin-bottom: var(--gwi-spacing-paragraph);
+}
