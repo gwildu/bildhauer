@@ -1,14 +1,8 @@
-import Head from "next/head";
 import { DefaultInnerLayout } from "../layout/default/inner-layout/inner-layout";
 import { PageHead } from "../packages/seo/page-head";
 import { LayoutImage } from "../layout/default/inner-layout/layout-image";
 import { Facts } from "../layout/default/inner-layout/facts";
-import { Text } from "../packages/typography/text";
 import { QuickLinks } from "../quick-links/quick-links";
-import { TextLink } from "../link";
-import { Heading } from "../packages/typography/heading";
-import { TextListUnordered } from "../packages/list/textList";
-import { Paragraph } from "../packages/typography/paragraph";
 import { useEffect, useState } from "react";
 import { Teaser } from "../teaser/teaser";
 
@@ -30,13 +24,6 @@ const useDaysLeft = (goal: Date) => {
   return daysLeft;
 };
 
-// const getGoal = () => {
-//   const dayZero = new Date(2006, 9, 23);
-//   const now = new Date();
-//   const currentYear = now.getFullYear();
-//   const isAnniversaryYear;
-// };
-
 export const Index = () => {
   const days = useDaysLeft(new Date(2026, 9, 23));
   const facts = (
@@ -50,7 +37,7 @@ export const Index = () => {
           ],
         },
         {
-          teaser: "40 Grabsteine",
+          teaser: "50 Grabsteine",
           paragraphs: ["aus der Schweiz führen wir in unserem Sortiment"],
         },
         {
@@ -72,7 +59,7 @@ export const Index = () => {
         <Teaser
           title={"Steinbildhauer/in 60-100% in der Grabmal Herstellung"}
           text={
-            "Zur Verstärkung suchen wir per 01.03.2022 oder nach Vereinbarung eine/n Steinbildhauer/in EFZ"
+            "Zur Verstärkung suchen wir nach Vereinbarung eine/n Steinbildhauer/in EFZ"
           }
           link={{
             href: "/job-offer",
