@@ -1,6 +1,5 @@
 import { Facts } from "../../layout/default/inner-layout/facts";
 import { DefaultInnerLayout } from "../../layout/default/inner-layout/inner-layout";
-import { Teaser } from "../../teaser/teaser";
 import { PageHead } from "../../packages/seo/page-head";
 import { LayoutImage } from "../../layout/default/inner-layout/layout-image";
 import { QuickLinks } from "../../quick-links/quick-links";
@@ -38,7 +37,7 @@ export const JobOffer = () => {
           ],
         },
         {
-          teaser: "40 Grabsteine",
+          teaser: "50 Grabsteine",
           paragraphs: ["aus der Schweiz führen wir in unserem Sortiment"],
         },
         {

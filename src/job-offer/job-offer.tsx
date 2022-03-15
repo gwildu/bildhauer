@@ -8,8 +8,7 @@ export const JobOffer: FC = () => {
   return (
     <>
       <Paragraph>
-        Zur Verstärkung suchen wir per 01.03.2022 oder
-        <br /> nach Vereinbarung eine/n
+        Zur Verstärkung suchen wir nach Vereinbarung eine/n
       </Paragraph>
       <Heading markupLevel={1} stylingLevel={"MAIN_HEADING"}>
         <strong>Steinbildhauer/in 60-100%</strong> in der Grabmal Herstellung
