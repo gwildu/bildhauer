@@ -8,20 +8,21 @@
     "start": "next start"
   },
   "dependencies": {
-    "@types/node": "^14.14.32",
-    "@types/react": "^17.0.3",
-    "next": "10.0.8",
-    "prettier": "^2.2.1",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "typescript": "^4.2.3"
+    "@types/node": "18.16.1",
+    "@types/react": "latest",
+    "eslint-config-next": "latest",
+    "next": "latest",
+    "prettier": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "typescript": "4.9.5"
   },
   "devDependencies": {
-    "doiuse": "^4.4.1",
+    "doiuse": "latest",
     "nested": "^0.0.1-pre2",
-    "postcss-custom-media": "^8.0.0",
+    "postcss-custom-media": "8.0.2",
     "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^6.7.0"
+    "postcss-preset-env": "7"
   },
   "packageManager": "yarn@3.6.1"
 }
