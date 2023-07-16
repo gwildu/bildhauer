@@ -108,7 +108,7 @@ const mainNavigationData: MainNavigationData = [
         level: 2,
         name: "job-offer",
         displayName: {
-          ["de-CH"]: "Stellenangebot",
+          ["de-CH"]: "Stellenangebote",
         },
         path: "/job-offer",
       },
