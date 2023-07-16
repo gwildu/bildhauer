@@ -31,7 +31,7 @@ export const DefaultFacts: FunctionComponent = () => {
           ],
         },
         {
-          teaser: "50 Grabsteine",
+          teaser: "40 Gesteine",
           paragraphs: ["aus der Schweiz führen wir in unserem Sortiment"],
         },
         {
