@@ -80,21 +80,21 @@ interface IMainNavigationItem extends INavigationItem<IMainNavigationItem> {}
 
 export type MainNavigationData = IMainNavigationItem[];
 const mainNavigationData: MainNavigationData = [
-  {
-    level: 1,
-    name: "index",
-    displayName: {
-      ["de-CH"]: "Startseite",
-    },
-    path: "/",
-  },
+  // {
+  //   level: 1,
+  //   name: "index",
+  //   displayName: {
+  //     ["de-CH"]: "Startseite",
+  //   },
+  //   path: "/",
+  // },
   {
     level: 1,
     name: "sculpture",
     displayName: {
       ["de-CH"]: "Bildhauerei",
     },
-    path: "/sculpture/grave-markers/index.html",
+    path: "/sculpture",
     sub: [
       {
         level: 2,
@@ -104,9 +104,27 @@ const mainNavigationData: MainNavigationData = [
         },
         path: "/sculpture/grave-markers/index.html",
       },
+    ],
+  },
+  {
+    level: 1,
+    name: "restoration",
+    displayName: {
+      ["de-CH"]: "Restaurationen",
+    },
+    path: "/restoration",
+  },
+  {
+    level: 1,
+    name: "about us",
+    displayName: {
+      ["de-CH"]: "Über uns",
+    },
+    path: "/about-us",
+    sub: [
       {
         level: 2,
-        name: "job-offer",
+        name: "job offer",
         displayName: {
           ["de-CH"]: "Stellenangebote",
         },
