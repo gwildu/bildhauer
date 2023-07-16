@@ -15,7 +15,7 @@
     "prettier": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "typescript": "4.9.5"
+    "typescript": "5"
   },
   "devDependencies": {
     "doiuse": "latest",
