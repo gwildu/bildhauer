@@ -1,4 +1,4 @@
-import { FC } from "react";
+import {FC, ReactNode} from "react";
 import { MainNavigation } from "../../navigation/main-navigation";
 import gridClasses from "../../packages/grid/grid.module.css";
 import innerLayoutClasses from "../../layout/default/inner-layout/inner-layout.module.css";
@@ -6,7 +6,7 @@ import { HeaderLogo } from "../../logo/logo";
 import { Footer } from "../../footer/footer";
 import footerClasses from "../../footer/footer.module.css";
 
-export const OuterLayout: FC = ({ children: pageContent }) => {
+export const OuterLayout: FC<{children: ReactNode}> = ({ children: pageContent }) => {
   return (
     <>
       <div>
