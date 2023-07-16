@@ -1,24 +1,26 @@
 import { FC, ReactNode } from "react";
-import Head from "next/head";
 import classes from "./inner-layout.module.css";
 import gridClasses from "../../../packages/grid/grid.module.css";
+import { DefaultLayoutImage } from "../defaultLayoutImage";
+import { DefaultFacts } from "../defaultFacts";
+import { DefaultSidebarRight } from "../defaultSidebarRight";
 
 interface IInnerLayout {
   children: ReactNode;
-  image: ReactNode;
-  facts: ReactNode;
+  image?: ReactNode;
+  facts?: ReactNode;
   pageHead: ReactNode;
-  sideBarRight: ReactNode;
-  sideBarLeft: ReactNode;
+  sideBarRight?: ReactNode;
+  sideBarLeft?: ReactNode;
 }
 
 export const DefaultInnerLayout: FC<IInnerLayout> = ({
   children,
-  image,
-  facts,
+  image = <DefaultLayoutImage />,
+  facts = <DefaultFacts />,
   pageHead,
-  sideBarLeft,
-  sideBarRight,
+  sideBarLeft = null,
+  sideBarRight = <DefaultSidebarRight />,
 }) => {
   return (
     <>
