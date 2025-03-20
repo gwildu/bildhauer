@@ -12,6 +12,7 @@
   }
   @media (--viewport-laptop-up) {
     grid-column: 2 / 8;
+    min-width: 500px;
   }
   @media (--viewport-desktop-up) {
     grid-column: 5 / 11;
