@@ -8,12 +8,12 @@ export const JobOffer: FC = () => {
   return (
     <>
       <Paragraph>
-        Zur Verstärkung suchen wir nach Vereinbarung eine/n
+        Zur Verstärkung suchen wir per sofort oder nach Vereinbarung eine/n
       </Paragraph>
-      <Heading markupLevel={1} stylingLevel={"MAIN_HEADING"}>
-        <strong>Steinbildhauer/in 60-100%</strong> in der Grabmal Herstellung
+      <Heading markupLevel={"h1"} stylingLevel={"MAIN_HEADING"}>
+        <strong>Steinbildhauer/in 50-100%</strong> in der Grabmal Herstellung
       </Heading>
-      <Heading markupLevel={2} stylingLevel={"SUB_HEADING_1"}>
+      <Heading markupLevel={"h2"} stylingLevel={"SUB_HEADING_1"}>
         Ihre Aufgaben umfassen:
       </Heading>
       <TextListUnordered>
@@ -36,8 +36,8 @@ export const JobOffer: FC = () => {
           <Text>Vertretung während Abwesenheiten und Betreuung der Kunden</Text>
         </li>
       </TextListUnordered>
-      <Heading markupLevel={2} stylingLevel={"SUB_HEADING_1"}>
-        Profil / Muss-Kriterien:
+      <Heading markupLevel={"h2"} stylingLevel={"SUB_HEADING_1"}>
+        Profil /&nbsp;Muss-Kriterien:
       </Heading>
       <TextListUnordered>
         <li>

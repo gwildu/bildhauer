@@ -7,10 +7,10 @@ export const Index = () => {
   return (
     <>
       <DefaultInnerLayout pageHead={pageHead}>
-        <Heading markupLevel={1} stylingLevel={"MAIN_HEADING"}>
+        <Heading markupLevel={"h1"} stylingLevel={"MAIN_HEADING"}>
           <strong>Bildhauerei & Restaurationen Rickenbacher</strong>
         </Heading>
-        <Heading markupLevel={2} stylingLevel={"SUB_HEADING_1"}>
+        <Heading markupLevel={"h2"} stylingLevel={"SUB_HEADING_1"}>
           Herzlich willkommen auf unsere Webseite
         </Heading>
         <Paragraph>
