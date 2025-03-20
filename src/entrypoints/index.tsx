@@ -16,11 +16,18 @@ export const Index = () => {
         <Paragraph>
           Wir führen Arbeiten in der Bildhauerei und Restaurationen aus. Neben
           den Schwerpunkten Grabmale und Steinrestaurierungen führen wir auch
-          Arbeiten im Bereich Steinmetzarbeiten und Gartenbau aus. Wenn es um
-          Stein geht sind Sie bei uns richtig. Wir legen wert auf eine
-          individuelle Beratung und suchen zusammen mit Ihnen die Lösung für
-          Sie. Als innovatives Unternehmen und dank Weiterbildungen sind wir
-          bestrebt Ihnen den optimalen Service zu bieten. Dank vielen Regionale
+          Arbeiten im Bereich Steinmetzarbeiten und Gartenbau aus.
+        </Paragraph>
+        <Paragraph>
+          Wenn es um Stein geht sind Sie bei uns richtig. Wir legen Wert auf
+          eine individuelle Beratung und suchen zusammen mit Ihnen die Lösung
+          die für Sie passt.
+        </Paragraph>
+        <Paragraph>
+          Als innovatives Unternehmen und dank Weiterbildungen sind wir bestrebt
+          Ihnen den optimalen Service zu bieten. Dank vielen Regionalen Partnern
+          und unserem Netzwerk können wir auch in kurzer Zeit Projekte
+          verwirklichen.
         </Paragraph>
       </DefaultInnerLayout>
     </>
