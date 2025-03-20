@@ -3,6 +3,10 @@
   color: var(--gwi-color-title);
   margin-bottom: var(--gwi-spacing-heading-main-bottom);
   margin-top: var(--gwi-spacing-heading-main-top);
+  font-weight: var(--gwi-font-weight-main-heading);
+  & strong {
+    font-weight: var(--gwi-font-weight-main-heading-strong);
+  }
 }
 
 .subHeading1 {

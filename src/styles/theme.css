@@ -65,4 +65,6 @@
   --gwi-font-size-main-heading: 2rem;
   --gwi-font-size-sub-heading-1: 1.5rem;
   --gwi-font-size-menu-toggle: 3rem;
+  --gwi-font-weight-main-heading: lighter;
+  --gwi-font-weight-main-heading-strong: normal;
 }
