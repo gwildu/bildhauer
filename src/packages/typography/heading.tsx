@@ -5,7 +5,7 @@ import { FunctionComponent, ReactNode } from "react";
 export type HeadingType = "MAIN_HEADING" | "SUB_HEADING_1";
 
 interface IHeadings {
-  markupLevel: 1 | 2 | 3 | 4 | 5 | 6;
+  markupLevel: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   stylingLevel: HeadingType;
   children: ReactNode;
 }
@@ -20,7 +20,7 @@ export const Heading: FunctionComponent<IHeadings> = ({
   stylingLevel,
   children,
 }) => {
-  const HeadingTag = `h${markupLevel}` as keyof JSX.IntrinsicElements;
+  const HeadingTag = markupLevel;
   const styles = styleMap[stylingLevel];
   return <HeadingTag className={styles}>{children}</HeadingTag>;
 };

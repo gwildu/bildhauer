@@ -34,7 +34,7 @@ export const Teaser: FC<ITeaser> = (props) => {
 export const TextTeaser: FC<ITextTeaaser> = ({ title, text, link }) => {
   return (
     <div>
-      <Heading markupLevel={2} stylingLevel={"MAIN_HEADING"}>
+      <Heading markupLevel={"h2"} stylingLevel={"MAIN_HEADING"}>
         <strong>Steinbildhauer/in 60-100%</strong> in der Grabmal Herstellung
       </Heading>
       <Paragraph>{text}</Paragraph>

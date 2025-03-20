@@ -6,7 +6,7 @@ import { Link } from "../../link";
 
 export const JobOffer = () => (
   <DefaultInnerLayout pageHead={pageHead}>
-    <Heading markupLevel={1} stylingLevel={"MAIN_HEADING"}>
+    <Heading markupLevel={"h1"} stylingLevel={"MAIN_HEADING"}>
       <strong>Stellenangebote</strong>
     </Heading>
     <TextListUnordered>
