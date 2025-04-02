@@ -10,6 +10,8 @@
 }
 
 .subHeading1 {
+  color: var(--gwi-color-text);
   font-size: var(--gwi-font-size-sub-heading-1);
+  margin-top: var(--gwi-spacing-heading-sub-1-top);
   margin-bottom: var(--gwi-spacing-heading-sub-1-bottom);
 }
