@@ -32,7 +32,7 @@
   &::before {
     content: "🔹";
     position: absolute;
-    left: -1em;
+    left: -1.1em;
     line-height: 1.2;
   }
 }
@@ -45,7 +45,7 @@
   &::before {
     content: "✅️";
     position: absolute;
-    left: -1em;
+    left: -1.25em;
     top: 0.25em;
     line-height: 1.2;
     font-size: 0.75em;
