@@ -1,7 +1,10 @@
 import { Heading } from "../../packages/typography/heading";
 import { DefaultInnerLayout } from "../../layout/default/inner-layout/inner-layout";
 import { PageHead } from "../../packages/seo/page-head";
-import { TextListUnordered } from "../../packages/list/textList";
+import {
+  BulletListItem,
+  TextListUnordered,
+} from "../../packages/list/textList";
 import { Link } from "../../link";
 
 export const JobOffer = () => (
@@ -10,11 +13,16 @@ export const JobOffer = () => (
       <strong>Stellenangebote</strong>
     </Heading>
     <TextListUnordered>
-      <li>
+      <BulletListItem>
         <Link href={"/job-offer/1"}>
           Steinbildhauer/in 50-100% in der Grabmal Herstellung
         </Link>
-      </li>
+      </BulletListItem>
+      <BulletListItem>
+        <Link href={"/job-offer/2"}>
+          Lehrstelle als Steinmetz/in – Fachrichtung Bildhauerei 2026
+        </Link>
+      </BulletListItem>
     </TextListUnordered>
   </DefaultInnerLayout>
 );

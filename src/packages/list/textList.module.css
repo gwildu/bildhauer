@@ -3,3 +3,51 @@
   margin-left: 1em;
   margin-bottom: var(--gwi-spacing-text-list);
 }
+
+.bullet {
+  list-style-type: disc;
+  position: relative;
+  padding-left: 0.3em;
+  margin-bottom: var(--gwi-spacing-text-list-item);
+}
+
+.checkmark {
+  list-style-type: none;
+  position: relative;
+  padding-left: 0.3em;
+  margin-bottom: var(--gwi-spacing-text-list-item);
+  &::before {
+    content: "✓";
+    position: absolute;
+    left: -1em;
+    line-height: 1.2;
+  }
+}
+
+.diamond {
+  list-style-type: none;
+  position: relative;
+  padding-left: 0.3em;
+  margin-bottom: var(--gwi-spacing-text-list-item);
+  &::before {
+    content: "🔹";
+    position: absolute;
+    left: -1.1em;
+    line-height: 1.2;
+  }
+}
+
+.checkbox {
+  list-style-type: none;
+  position: relative;
+  padding-left: 0.3em;
+  margin-bottom: var(--gwi-spacing-text-list-item);
+  &::before {
+    content: "✅️";
+    position: absolute;
+    left: -1.25em;
+    top: 0.25em;
+    line-height: 1.2;
+    font-size: 0.75em;
+  }
+}

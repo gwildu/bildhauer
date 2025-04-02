@@ -1,2 +1,11 @@
 .link {
+  color: var(--gwi-color-link);
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: var(--gwi-color-link-highlight);
+  }
+  &:visited {
+    color: var(--gwi-color-link);
+  }
 }

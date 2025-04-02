@@ -1,0 +1,9 @@
+.no-bullets {
+  list-style-type: none;
+}
+
+.checkbox {
+  &:before {
+    content: "✓";
+  }
+}

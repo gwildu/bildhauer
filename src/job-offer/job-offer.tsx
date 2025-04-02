@@ -1,6 +1,6 @@
 import { Paragraph } from "../packages/typography/paragraph";
 import { Heading } from "../packages/typography/heading";
-import { TextListUnordered } from "../packages/list/textList";
+import { BulletListItem, TextListUnordered } from "../packages/list/textList";
 import { Text } from "../packages/typography/text";
 import { FC } from "react";
 
@@ -17,41 +17,41 @@ export const JobOffer: FC = () => {
         Ihre Aufgaben umfassen:
       </Heading>
       <TextListUnordered>
-        <li>
+        <BulletListItem>
           <Text>Ausführung von Grabmalen und Inschriften</Text>
-        </li>
-        <li>
+        </BulletListItem>
+        <BulletListItem>
           <Text>Versetzen von Grabmalen</Text>
-        </li>
-        <li>
+        </BulletListItem>
+        <BulletListItem>
           <Text>Ausführung Zweitinschriften</Text>
-        </li>
-        <li>
+        </BulletListItem>
+        <BulletListItem>
           <Text>Unterhalt von Grabmalen</Text>
-        </li>
-        <li>
+        </BulletListItem>
+        <BulletListItem>
           <Text>Unterstützung Restaurierung</Text>
-        </li>
-        <li>
+        </BulletListItem>
+        <BulletListItem>
           <Text>Vertretung während Abwesenheiten und Betreuung der Kunden</Text>
-        </li>
+        </BulletListItem>
       </TextListUnordered>
       <Heading markupLevel={"h2"} stylingLevel={"SUB_HEADING_1"}>
         Profil /&nbsp;Muss-Kriterien:
       </Heading>
       <TextListUnordered>
-        <li>
+        <BulletListItem>
           <Text>Steinbildhauer EFZ</Text>
-        </li>
-        <li>
+        </BulletListItem>
+        <BulletListItem>
           <Text>Selbständiges Arbeiten an vielfältigen Projekten</Text>
-        </li>
-        <li>
+        </BulletListItem>
+        <BulletListItem>
           <Text>Hohe Einsatzbereitschaft, Flexibilität und Belastbarkeit</Text>
-        </li>
-        <li>
+        </BulletListItem>
+        <BulletListItem>
           <Text>Angemessener Kundenumgang</Text>
-        </li>
+        </BulletListItem>
       </TextListUnordered>
       <Paragraph>
         Wir bieten moderne Anstellungsverhältnisse nach GVA, in einem familiären

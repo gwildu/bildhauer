@@ -47,10 +47,12 @@
   --gwi-spacing-3: calc(3 * var(--gwi-grid-spacing-base));
   --gwi-spacing-heading-main-top: calc(2 * var(--gwi-grid-spacing-base));
   --gwi-spacing-heading-main-bottom: calc(4 * var(--gwi-grid-spacing-base));
+  --gwi-spacing-heading-sub-1-top: calc(3 * var(--gwi-grid-spacing-base));
   --gwi-spacing-heading-sub-1-bottom: calc(2 * var(--gwi-grid-spacing-base));
   --gwi-spacing-text-default: var(--gwi-grid-spacing-base);
   --gwi-spacing-paragraph: calc(1.5 * var(--gwi-spacing-text-default));
   --gwi-spacing-text-list: calc(2 * var(--gwi-spacing-text-default));
+  --gwi-spacing-text-list-item: calc(1.5 * var(--gwi-spacing-text-default));
 
   /* grid margins */
   --gwi-grid-margin-default: var(--gwi-spacing-3);
