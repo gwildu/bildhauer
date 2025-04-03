@@ -1,7 +1,11 @@
 import { QuickLinks } from "../../quick-links/quick-links";
 
 export const DefaultSidebarRight = () => {
-  const numberOfImageNumber = Math.floor(Math.random() * 107);
+  const missingImages = [77];
+  let numberOfImageNumber = 0;
+  do {
+    numberOfImageNumber = Math.floor(Math.random() * 107);
+  } while (missingImages.includes(numberOfImageNumber));
   const isHundredOrMore = numberOfImageNumber > 99;
   const isTenOrMore = numberOfImageNumber > 9;
   const filler = isHundredOrMore ? "" : isTenOrMore ? "0" : "00";
