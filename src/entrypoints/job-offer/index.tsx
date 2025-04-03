@@ -6,9 +6,18 @@ import {
   TextListUnordered,
 } from "../../packages/list/textList";
 import { Link } from "../../link";
+import { LayoutImage } from "../../layout/default/inner-layout/layout-image";
 
 export const JobOffer = () => (
-  <DefaultInnerLayout pageHead={pageHead}>
+  <DefaultInnerLayout
+    pageHead={pageHead}
+    image={
+      <LayoutImage
+        src={"/media/images/layout/working.jpg"}
+        alt={"bei der Arbeit"}
+      />
+    }
+  >
     <Heading markupLevel={"h1"} stylingLevel={"MAIN_HEADING"}>
       <strong>Stellenangebote</strong>
     </Heading>
