@@ -34,4 +34,6 @@ export const Index = () => {
   );
 };
 
-const pageHead = <PageHead title={"Bildhauerei-Rickenbacher - Startseite"} />;
+const pageHead = (
+  <PageHead title={"Bildhauerei-Rickenbacher - Startseite"} canonical={""} />
+);

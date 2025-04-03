@@ -6,12 +6,16 @@ interface IPageHead {
   canonical?: string;
 }
 
+const CANONICAL_BASE_URL = "https://bildhauer-stein.ch";
+
 export const PageHead: FC<IPageHead> = ({ title, canonical }) => {
   return (
     <Head>
       <title>{title}</title>
       <link rel="icon" href="/favicon.ico" />
-      {canonical && <link rel="canonical" href={canonical} />}
+      {typeof canonical === "string" && (
+        <link rel="canonical" href={`${CANONICAL_BASE_URL}${canonical}`} />
+      )}
     </Head>
   );
 };

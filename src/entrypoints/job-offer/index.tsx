@@ -37,5 +37,8 @@ export const JobOffer = () => (
 );
 
 const pageHead = (
-  <PageHead title={"Bildhauerei-Rickenbacher - Offene Stellen"} />
+  <PageHead
+    title={"Bildhauerei-Rickenbacher - Offene Stellen"}
+    canonical={"/job-offer"}
+  />
 );
