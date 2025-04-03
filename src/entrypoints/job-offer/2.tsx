@@ -26,5 +26,6 @@ const pageHead = (
     title={
       "Bildhauerei-Rickenbacher - Steinbildhauer/in 60-100% in der Grabmal Herstellung"
     }
+    canonical={"/job-offer/2"}
   />
 );
