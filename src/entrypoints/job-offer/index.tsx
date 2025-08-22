@@ -23,11 +23,6 @@ export const JobOffer = () => (
     </Heading>
     <TextListUnordered>
       <BulletListItem>
-        <Link href={"/job-offer/1"}>
-          Steinbildhauer/in 50-100% in der Grabmal Herstellung
-        </Link>
-      </BulletListItem>
-      <BulletListItem>
         <Link href={"/job-offer/2"}>
           Lehrstelle als Steinmetz/in – Fachrichtung Bildhauerei 2026
         </Link>
