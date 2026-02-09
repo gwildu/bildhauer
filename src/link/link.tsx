@@ -18,7 +18,6 @@ export const Link: FC<ILink> = ({
   as,
   children,
   locale,
-  passHref,
   prefetch,
   replace,
   scroll,
@@ -31,18 +30,14 @@ export const Link: FC<ILink> = ({
       href={href}
       as={as}
       locale={locale}
-      passHref={passHref}
       prefetch={prefetch}
       replace={replace}
       scroll={scroll}
       shallow={shallow}
+      className={`${classes.link}${className ? ` ${className}` : ""}`}
+      {...rest}
     >
-      <a
-        className={`${classes.link}${className ? ` ${className}` : ""}`}
-        {...rest}
-      >
-        {children}
-      </a>
+      {children}
     </NextLink>
   );
 };
