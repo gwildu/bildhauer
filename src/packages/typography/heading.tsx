@@ -1,12 +1,12 @@
 import classes from "./heading.module.css";
-import { FunctionComponent } from "react";
+import { FunctionComponent, ReactNode } from "react";
 
 export type HeadingType = "MAIN_HEADING" | "SUB_HEADING_1";
 
 interface IHeadings {
   markupLevel: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   stylingLevel: HeadingType;
-  children: React.ReactElement | string;
+  children: ReactNode;
 }
 
 const styleMap = {

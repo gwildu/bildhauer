@@ -3,7 +3,7 @@ import { AppProps } from "next/app";
 import { LayoutKeys } from "../layout/outer-layout/layout-map";
 
 export type CustomAppProps = AppProps & {
-  Component: NextComponentType<NextPageContext, never, never> & {
+  Component: NextComponentType<NextPageContext, {}, {}> & {
     Layout: LayoutKeys;
   };
 };

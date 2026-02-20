@@ -1,7 +1,7 @@
-import { DefaultInnerLayout } from "../../layout/default/inner-layout/inner-layout";
+import { DefaultInnerLayout } from "../../layout/inner-layout/inner-layout";
 import { PageHead } from "../../packages/seo/page-head";
 import { Apprentice as CurrentJobOffer } from "../../job-offer/apprentice";
-import { LayoutImage } from "../../layout/default/inner-layout/layout-image";
+import { LayoutImage } from "../../layout/inner-layout/layout-image";
 
 export const JobOffer = () => {
   return (
