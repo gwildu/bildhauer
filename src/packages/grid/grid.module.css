@@ -2,9 +2,13 @@
   display: grid;
   grid-column-gap: var(--gwi-spacing-3);
   grid-row-gap: var(--gwi-spacing-3);
-  grid-template-columns: calc(50% - (var(--gwi-spacing-3) / 2)) calc(
-      50% - (var(--gwi-spacing-3) / 2)
-    );
+  grid-template-columns: auto;
+
+  @media (--viewport-mobile-up) {
+    grid-template-columns: calc(50% - (var(--gwi-spacing-3))) calc(
+        50% - (var(--gwi-spacing-3))
+      );
+  }
   @media (--viewport-tablet-up) {
     grid-template-columns: auto repeat(6, 60px) auto;
   }

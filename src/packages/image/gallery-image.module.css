@@ -1,0 +1,24 @@
+.picture {
+  display: flex;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  align-items: center;
+  justify-content: center;
+  margin: -5px;
+}
+
+.image {
+  box-shadow:
+    0 10px 20px rgba(93, 69, 25, 0.19),
+    0 6px 6px rgba(93, 69, 25, 0.23);
+  border: 5px solid white;
+  box-sizing: content-box;
+  border-radius: 8px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    box-shadow:
+      0 19px 38px rgba(93, 69, 25, 0.19),
+      0 15px 12px rgba(93, 69, 25, 0.23);
+  }
+}

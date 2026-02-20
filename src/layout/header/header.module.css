@@ -1,0 +1,17 @@
+.header {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.logo {
+  grid-column: 1 / 1;
+  padding: var(--gwi-grid-spacing-base);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  grid-column: 2 / 2;
+  padding: var(--gwi-grid-spacing-base);
+}
