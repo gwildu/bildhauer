@@ -23,7 +23,10 @@ export const Gallery: FunctionComponent<IGallery> = ({ images, name }) => {
         const key = image.path + index;
         return (
           <div key={key} className={classes.imageContainer}>
-            <a href={`./fullscreen/${name}#${alt}`} title="fullscreen">
+            <a
+              href={`./fullscreen/${name}?imageIndex=${index}#${alt}`}
+              title="fullscreen"
+            >
               <GalleryImage
                 path={path}
                 originalHeight={height}

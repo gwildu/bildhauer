@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 import { FC } from "react";
 import classes from "./gallery-fullscreen.module.css";
 import { GalleryImageFullScreen } from "../image/gallery-fullscreen-image";
-import { useHash } from "../routing/useHash";
+import { useSearchParams } from "next/navigation";
 
 interface IGalleryFullscreen {
   images: {
@@ -20,12 +20,8 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
     }
   }
 
-  const hash = useHash();
-  const splittedHash = hash?.split("-");
-  const hashIndex =
-    splittedHash && splittedHash.length
-      ? parseInt(splittedHash[splittedHash.length - 1]) - 1
-      : 0;
+  const searchParams = useSearchParams();
+  const imageIndex = Number(searchParams.get("imageIndex"));
 
   return (
     <div className={classes.container}>
@@ -54,7 +50,7 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
                   originalWidth={width}
                   alt={alt}
                   fetchPriority={
-                    Math.abs(hashIndex - index) < 2 ? "high" : "auto"
+                    Math.abs(imageIndex - index) < 2 ? "high" : "low"
                   }
                 />
                 <a
