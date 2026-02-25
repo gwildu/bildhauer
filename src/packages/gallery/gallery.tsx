@@ -29,6 +29,7 @@ export const Gallery: FunctionComponent<IGallery> = ({ images, name }) => {
                 originalHeight={height}
                 originalWidth={width}
                 alt={alt}
+                fetchPriority={index < 8 ? "high" : "auto"}
               />
             </a>
           </div>

@@ -5,7 +5,7 @@ import { Gallery${isFullScreen ? `Fullscreen` : ""} } from "../../${
 ${images
   .map(
     ({ imageName }) => `
-import ${imageName} from "../../../${
+import ${imageName.replace("-", "")} from "../../../${
       isFullScreen ? `../` : ""
     }public/media/images/gallery/${galleryName}-${imageName}.fallback.jpg";
 `,
@@ -20,7 +20,7 @@ ${images
   .map(
     ({ imageName }) => `
   {
-    staticImageData: ${imageName},
+    staticImageData: ${imageName.replace("-", "")},
     path: getPath("${imageName}"),
     alt: "${imageName}",
   },

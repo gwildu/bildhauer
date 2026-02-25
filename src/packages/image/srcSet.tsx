@@ -6,12 +6,14 @@ interface ISrcSet {
   width: number;
   height: number;
   alt?: string;
+  fetchPriority?: "auto" | "high" | "low";
 }
 export const SrcSet: FunctionComponent<ISrcSet> = ({
   path,
   width,
   height,
   alt = "",
+  fetchPriority = "auto",
 }) => {
   console.log({ path });
   return (
@@ -29,6 +31,7 @@ export const SrcSet: FunctionComponent<ISrcSet> = ({
         height={height}
         style={{ aspectRatio: `${width} / ${height}` }}
         src={path ? `${path}.fallback.jpg` : path}
+        fetchPriority={fetchPriority}
       />
     </>
   );
