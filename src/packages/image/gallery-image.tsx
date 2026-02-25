@@ -8,6 +8,7 @@ type IGalleryImage = {
   originalWidth: number;
   alt?: string;
   fetchPriority?: "auto" | "high" | "low";
+  loading?: "eager" | "lazy";
 };
 export const GalleryImage: FunctionComponent<IGalleryImage> = ({
   path,
@@ -15,6 +16,7 @@ export const GalleryImage: FunctionComponent<IGalleryImage> = ({
   originalWidth,
   alt = "",
   fetchPriority = "auto",
+  loading = "eager",
 }) => {
   return (
     <picture className={classes.picture}>

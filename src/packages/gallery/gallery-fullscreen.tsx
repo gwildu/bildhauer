@@ -52,6 +52,7 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
                   fetchPriority={
                     Math.abs(imageIndex - index) < 2 ? "high" : "low"
                   }
+                  loading={Math.abs(imageIndex - index) < 2 ? "eager" : "lazy"}
                 />
                 <a
                   className={`${classes.prev} ${classes.handle}`}

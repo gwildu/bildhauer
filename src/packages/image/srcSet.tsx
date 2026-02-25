@@ -7,6 +7,7 @@ interface ISrcSet {
   height: number;
   alt?: string;
   fetchPriority?: "auto" | "high" | "low";
+  loading?: "eager" | "lazy";
 }
 export const SrcSet: FunctionComponent<ISrcSet> = ({
   path,
@@ -14,6 +15,7 @@ export const SrcSet: FunctionComponent<ISrcSet> = ({
   height,
   alt = "",
   fetchPriority = "auto",
+  loading = "eager",
 }) => {
   console.log({ path });
   return (
@@ -32,6 +34,7 @@ export const SrcSet: FunctionComponent<ISrcSet> = ({
         style={{ aspectRatio: `${width} / ${height}` }}
         src={path ? `${path}.fallback.jpg` : path}
         fetchPriority={fetchPriority}
+        loading={loading}
       />
     </>
   );

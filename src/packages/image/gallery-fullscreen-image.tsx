@@ -8,6 +8,7 @@ type IGalleryImage = {
   originalWidth: number;
   alt?: string;
   fetchPriority?: "auto" | "high" | "low";
+  loading?: "eager" | "lazy";
 };
 
 export const GalleryImageFullScreen: FunctionComponent<IGalleryImage> = ({
@@ -16,6 +17,7 @@ export const GalleryImageFullScreen: FunctionComponent<IGalleryImage> = ({
   originalWidth,
   alt = "",
   fetchPriority = "auto",
+  loading = "eager",
 }) => {
   return (
     <picture className={classes.picture}>
@@ -25,6 +27,7 @@ export const GalleryImageFullScreen: FunctionComponent<IGalleryImage> = ({
         height={originalHeight}
         alt={alt}
         fetchPriority={fetchPriority}
+        loading={loading}
       />
     </picture>
   );
