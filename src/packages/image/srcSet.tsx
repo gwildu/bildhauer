@@ -8,6 +8,7 @@ interface ISrcSet {
   alt?: string;
   fetchPriority?: "auto" | "high" | "low";
   loading?: "eager" | "lazy";
+  onLoad?: () => void;
 }
 export const SrcSet: FunctionComponent<ISrcSet> = ({
   path,
@@ -16,8 +17,8 @@ export const SrcSet: FunctionComponent<ISrcSet> = ({
   alt = "",
   fetchPriority = "auto",
   loading = "eager",
+  onLoad,
 }) => {
-  console.log({ path });
   return (
     <>
       <source
@@ -35,6 +36,7 @@ export const SrcSet: FunctionComponent<ISrcSet> = ({
         src={path ? `${path}.fallback.jpg` : path}
         fetchPriority={fetchPriority}
         loading={loading}
+        onLoad={onLoad}
       />
     </>
   );

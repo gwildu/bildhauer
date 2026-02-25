@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
 import classes from "./gallery-fullscreen.module.css";
 import { GalleryImageFullScreen } from "../image/gallery-fullscreen-image";
 import { useSearchParams } from "next/navigation";
@@ -19,6 +19,11 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
       document.exitFullscreen();
     }
   }
+
+  const [firstImageLoaded, setFirstImageLoaded] = useState(false);
+  const onFirstImageLoaded = () => {
+    setFirstImageLoaded(true);
+  };
 
   const searchParams = useSearchParams();
   const imageIndex = Number(searchParams.get("imageIndex"));
@@ -41,7 +46,6 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
               path,
               alt,
             } = image;
-            console.log({ src: image.staticImageData.src, path });
             return (
               <li className={classes.slide} key={image.path} id={image.alt}>
                 <GalleryImageFullScreen
@@ -52,7 +56,16 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
                   fetchPriority={
                     Math.abs(imageIndex - index) < 2 ? "high" : "low"
                   }
-                  loading={Math.abs(imageIndex - index) < 2 ? "eager" : "lazy"}
+                  loading={
+                    Math.abs(imageIndex - index) < 2
+                      ? "eager"
+                      : firstImageLoaded
+                        ? "eager"
+                        : "lazy"
+                  }
+                  onLoad={
+                    imageIndex - index === 0 ? onFirstImageLoaded : undefined
+                  }
                 />
                 <a
                   className={`${classes.prev} ${classes.handle}`}

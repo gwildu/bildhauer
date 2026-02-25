@@ -1,7 +1,9 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import { StaticImageData } from "next/image";
 import classes from "./gallery.module.css";
 import { GalleryImage } from "../image/gallery-image";
+
+const FIRST_IMAGES_TO_LOAD = 8;
 
 interface IGallery {
   images: {
@@ -11,7 +13,22 @@ interface IGallery {
   }[];
   name: string;
 }
+
 export const Gallery: FunctionComponent<IGallery> = ({ images, name }) => {
+  const [firstImagesLoaded, setFirstImagesLoaded] = useState(false);
+  const [firstImagesCounter, setFirstImagesCounter] = useState(0);
+
+  const onFirstImagesLoaded = () => {
+    setFirstImagesCounter((prev) => prev + 1);
+  };
+
+  useEffect(() => {
+    if (firstImagesCounter === FIRST_IMAGES_TO_LOAD) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setFirstImagesLoaded(true);
+    }
+  }, [firstImagesCounter]);
+
   return (
     <div className={classes.galleryContainer}>
       {images.map((image, index) => {
@@ -32,8 +49,15 @@ export const Gallery: FunctionComponent<IGallery> = ({ images, name }) => {
                 originalHeight={height}
                 originalWidth={width}
                 alt={alt}
-                fetchPriority={index < 8 ? "high" : "auto"}
-                loading={index < 8 ? "eager" : "lazy"}
+                fetchPriority={index < FIRST_IMAGES_TO_LOAD ? "high" : "auto"}
+                loading={
+                  index < FIRST_IMAGES_TO_LOAD
+                    ? "eager"
+                    : firstImagesLoaded
+                      ? "eager"
+                      : "lazy"
+                }
+                onLoad={onFirstImagesLoaded}
               />
             </a>
           </div>
