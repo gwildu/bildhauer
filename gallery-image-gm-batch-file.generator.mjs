@@ -24,8 +24,6 @@ const galleryNames = readDirectoryNames(
   resolveRelativePath(RELATIVE_GALLERY_IMAGES_SOURCE_BASE_PATH),
 );
 
-// console.log(JSON.stringify(galleryNames, null, 2));
-
 const galleryAndImageNames = galleryNames.map((galleryName) => {
   const fileNames = readFileNames(
     `${RELATIVE_GALLERY_IMAGES_SOURCE_BASE_PATH}/${galleryName}`,
@@ -35,9 +33,7 @@ const galleryAndImageNames = galleryNames.map((galleryName) => {
 
 const mostCommonViewportSizes = devices;
 
-// console.log(JSON.stringify(galleryAndImageNames, null, 2));
-
-const getGMCommandsPerFile = (galleryName, imageName) => {
+const getGMCommandsPerFile = (galleryName, imageName, index) => {
   const sourcePath = `${GALLERY_IMAGES_SOURCE_BASE_PATH}/${galleryName}/${imageName}`;
   const publicGalleryPath = `${GALLERY_IMAGES_PUBLIC_BASE_PATH}`;
   const imageNameWithoutExtension = imageName.split(".")[0];
@@ -62,7 +58,7 @@ ${mostCommonViewportSizes
       `${publicGalleryPath}/${galleryName}-${imageNameWithoutExtension}.lowDensity-${width}-${height}-${aspectRatio}.avif`,
       // `${publicGalleryPath}/${galleryName}-${imageNameWithoutExtension}.lowDensity-${width}-${height}-${aspectRatio}.webp`,
     ]
-      .map((path) => {
+      .map((path, index) => {
         const densityFactor = path.includes("highDensity") ? 2 : 1;
         return `convert ${sourcePath} -resize "${densityFactor * width}x${
           densityFactor * height
@@ -71,14 +67,16 @@ ${mostCommonViewportSizes
       .join(EOL);
   })
   .join(EOL)}
+done_file_${index}
 `;
 };
 
 const getGMCommandsPerGallery = (galleryName, imageNames) =>
-  imageNames.reduce((acc, imageName) => {
+  imageNames.reduce((acc, imageName, index) => {
     return `${acc}# Image: ${imageName}${getGMCommandsPerFile(
       galleryName,
       imageName,
+      index,
     )}`;
   }, `# Gallery: ${galleryName}${EOL}`);
 
@@ -109,39 +107,25 @@ const output = galleryAndImageNames.reduce(
         ],
       },
     };
-    //console.log(JSON.stringify(result, null, 2));
     return result;
   },
   { commands: "", code: { galleryCodeOutputs: [] } },
 );
 
-// console.log(JSON.stringify({ output }, null, 2));
+console.info("output generated, writing to files...");
 
 writeFileSync(resolveRelativePath(GM_BATCH_FILE_PATH), output.commands, {
   flag: "w",
 });
 
+console.info("GM batch file written, writing gallery code files...");
+
 for (const galleryCodeOutput of output.code.galleryCodeOutputs) {
-  // console.log(
-  //   JSON.stringify({ output, outputFullscreen, galleryName }, null, 2),
-  // );
   const { galleryName, output, outputFullscreen } = galleryCodeOutput;
   writeFileSync(
     resolveRelativePath(`${GALLERY_CODE_BASE_PATH}${galleryName}.tsx`),
     output,
     { flag: "w" },
-  );
-  console.log(
-    JSON.stringify(
-      {
-        outputFullscreen,
-        path: resolveRelativePath(
-          `${GALLERY_CODE_BASE_PATH}fullscreen/${galleryName}.tsx`,
-        ),
-      },
-      null,
-      2,
-    ),
   );
   writeFileSync(
     resolveRelativePath(
@@ -172,5 +156,9 @@ for (const galleryCodeOutput of output.code.galleryCodeOutputs) {
     ),
     getGalleryEntrypointCode({ galleryName, isFullScreen: true }),
     { flag: "w" },
+  );
+
+  console.info(
+    `Gallery code files for gallery ${galleryName} written, starting to write image files...`,
   );
 }

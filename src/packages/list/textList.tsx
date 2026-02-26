@@ -4,7 +4,6 @@ import { FC, PropsWithChildren } from "react";
 export const TextListUnordered: FC<
   PropsWithChildren & { className?: string }
 > = ({ className, children }) => {
-  console.log({ className });
   return (
     <ul className={`${classes.wrapper}${className ? ` ${className}` : ""}`}>
       {children}
