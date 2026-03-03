@@ -54,17 +54,21 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
               path,
               alt,
             } = image;
-            return shouldImageLoad ? (
+            return (
               <li className={classes.slide} key={image.path} id={image.alt}>
-                <GalleryImageFullScreen
-                  path={path}
-                  originalHeight={height}
-                  originalWidth={width}
-                  alt={alt}
-                  fetchPriority={priority}
-                  loading={loading}
-                  onLoad={onImageLoaded}
-                />
+                {shouldImageLoad ? (
+                  <GalleryImageFullScreen
+                    path={path}
+                    originalHeight={height}
+                    originalWidth={width}
+                    alt={alt}
+                    fetchPriority={priority}
+                    loading={loading}
+                    onLoad={onImageLoaded}
+                  />
+                ) : (
+                  <div style={{ width: `${width}px`, height: `${height}px` }} />
+                )}
                 <a
                   className={`${classes.prev} ${classes.handle}`}
                   href={`#${
@@ -88,7 +92,7 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
                   〉
                 </a>
               </li>
-            ) : null;
+            );
           })}
         </ul>
       </div>

@@ -30,27 +30,31 @@ export const Gallery: FunctionComponent<IGallery> = ({ images, name }) => {
         } = image;
         const key = image.path + index;
         const shouldImageLoad = imagesToLoad.includes(index);
-        return shouldImageLoad ? (
+        return (
           <div key={key} className={classes.imageContainer}>
             <a
               href={`./fullscreen/${name}?imageIndex=${index}#${alt}`}
               title="fullscreen"
             >
-              <GalleryImage
-                path={path}
-                originalHeight={height}
-                originalWidth={width}
-                alt={alt}
-                fetchPriority={shouldImageLoad ? "high" : "auto"}
-                loading={shouldImageLoad ? "eager" : "lazy"}
-                onLoad={() => {
-                  console.log({ index });
-                  onImageLoaded();
-                }}
-              />
+              {shouldImageLoad ? (
+                <GalleryImage
+                  path={path}
+                  originalHeight={height}
+                  originalWidth={width}
+                  alt={alt}
+                  fetchPriority={shouldImageLoad ? "high" : "auto"}
+                  loading={shouldImageLoad ? "eager" : "lazy"}
+                  onLoad={() => {
+                    console.log({ index });
+                    onImageLoaded();
+                  }}
+                />
+              ) : (
+                <div style={{ height: `${height}px`, width: `${width}px` }} />
+              )}
             </a>
           </div>
-        ) : null;
+        );
       })}
     </div>
   );
