@@ -1,8 +1,9 @@
 import { StaticImageData } from "next/image";
-import { FC, useState } from "react";
+import { FC } from "react";
 import classes from "./gallery-fullscreen.module.css";
 import { GalleryImageFullScreen } from "../image/gallery-fullscreen-image";
 import { useSearchParams } from "next/navigation";
+import { useSortedImageLoading } from "./useSortedImageLoading";
 
 interface IGalleryFullscreen {
   images: {
@@ -20,13 +21,17 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
     }
   }
 
-  const [firstImageLoaded, setFirstImageLoaded] = useState(false);
-  const onFirstImageLoaded = () => {
-    setFirstImageLoaded(true);
-  };
-
   const searchParams = useSearchParams();
-  const imageIndex = Number(searchParams.get("imageIndex"));
+  const rawImageIndexParam = searchParams.get("imageIndex");
+  const imageIndex = rawImageIndexParam ? Number(rawImageIndexParam) : null;
+  console.log({ imageIndex });
+
+  const { imagesToLoad, onImageLoaded } = useSortedImageLoading(
+    images.length,
+    imageIndex,
+  );
+
+  console.log({ imagesToLoad });
 
   return (
     <div className={classes.container}>
@@ -41,31 +46,24 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
         <span className={`${classes.fixedHandle} ${classes.next}`}>〉</span>
         <ul className={classes.slides}>
           {images.map((image, index) => {
+            const shouldImageLoad = imagesToLoad.includes(index);
+            const priority = shouldImageLoad ? "high" : "low";
+            const loading = shouldImageLoad ? "eager" : "lazy";
             const {
               staticImageData: { height, width },
               path,
               alt,
             } = image;
-            return (
+            return shouldImageLoad ? (
               <li className={classes.slide} key={image.path} id={image.alt}>
                 <GalleryImageFullScreen
                   path={path}
                   originalHeight={height}
                   originalWidth={width}
                   alt={alt}
-                  fetchPriority={
-                    Math.abs(imageIndex - index) < 2 ? "high" : "low"
-                  }
-                  loading={
-                    Math.abs(imageIndex - index) < 2
-                      ? "eager"
-                      : firstImageLoaded
-                        ? "eager"
-                        : "lazy"
-                  }
-                  onLoad={
-                    imageIndex - index === 0 ? onFirstImageLoaded : undefined
-                  }
+                  fetchPriority={priority}
+                  loading={loading}
+                  onLoad={onImageLoaded}
                 />
                 <a
                   className={`${classes.prev} ${classes.handle}`}
@@ -90,7 +88,7 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
                   〉
                 </a>
               </li>
-            );
+            ) : null;
           })}
         </ul>
       </div>

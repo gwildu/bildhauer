@@ -10,6 +10,7 @@ export const useHash = () => {
   const [hash, setHash] = useState<string | null>(null);
 
   useEffect(() => {
+    console.log("hash", { typeofWindow: typeof window });
     if (typeof window === "undefined") {
       return;
     }

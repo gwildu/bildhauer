@@ -15,7 +15,7 @@ export const DefaultSidebarRight = () => {
           text: "Gallerie Grabmale",
           isLinkActive: false,
           image: {
-            src: `/media/images/gallery/gravemarkers-gravemarkers${numberOfImage}.lowDensity.avif`,
+            src: `/media/images/gallery/gravemarkers-gravemarkers-${numberOfImage}.lowDensity.avif`,
           },
         },
       ]}
