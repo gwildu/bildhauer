@@ -3,7 +3,10 @@ import { FC } from "react";
 import classes from "./gallery-fullscreen.module.css";
 import { GalleryImageFullScreen } from "../image/gallery-fullscreen-image";
 import { useSearchParams } from "next/navigation";
-import { useSortedImageLoading } from "./useSortedImageLoading";
+import {
+  isInLoadingSpan,
+  useSortedImageLoading,
+} from "./useSortedImageLoading";
 
 interface IGalleryFullscreen {
   images: {
@@ -24,14 +27,11 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
   const searchParams = useSearchParams();
   const rawImageIndexParam = searchParams.get("imageIndex");
   const imageIndex = rawImageIndexParam ? Number(rawImageIndexParam) : null;
-  console.log({ imageIndex });
 
-  const { imagesToLoad, onImageLoaded } = useSortedImageLoading(
+  const { loadingSpan, onImageLoaded } = useSortedImageLoading(
     images.length,
     imageIndex,
   );
-
-  console.log({ imagesToLoad });
 
   return (
     <div className={classes.container}>
@@ -46,7 +46,7 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
         <span className={`${classes.fixedHandle} ${classes.next}`}>〉</span>
         <ul className={classes.slides}>
           {images.map((image, index) => {
-            const shouldImageLoad = imagesToLoad.includes(index);
+            const shouldImageLoad = isInLoadingSpan(loadingSpan, index);
             const priority = shouldImageLoad ? "high" : "low";
             const loading = shouldImageLoad ? "eager" : "lazy";
             const {
@@ -64,7 +64,7 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
                     alt={alt}
                     fetchPriority={priority}
                     loading={loading}
-                    onLoad={onImageLoaded}
+                    onLoad={() => onImageLoaded(index)}
                   />
                 ) : (
                   <div style={{ width: `${width}px`, height: `${height}px` }} />

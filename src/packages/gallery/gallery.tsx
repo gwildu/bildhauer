@@ -2,7 +2,10 @@ import { FunctionComponent } from "react";
 import { StaticImageData } from "next/image";
 import classes from "./gallery.module.css";
 import { GalleryImage } from "../image/gallery-image";
-import { useSortedImageLoading } from "./useSortedImageLoading";
+import {
+  isInLoadingSpan,
+  useSortedImageLoading,
+} from "./useSortedImageLoading";
 
 interface IGallery {
   images: {
@@ -14,11 +17,10 @@ interface IGallery {
 }
 
 export const Gallery: FunctionComponent<IGallery> = ({ images, name }) => {
-  const { imagesToLoad, onImageLoaded } = useSortedImageLoading(
+  const { loadingSpan, onImageLoaded } = useSortedImageLoading(
     images.length,
     0,
   );
-  console.log({ imagesToLoad });
 
   return (
     <div className={classes.galleryContainer}>
@@ -29,7 +31,7 @@ export const Gallery: FunctionComponent<IGallery> = ({ images, name }) => {
           alt,
         } = image;
         const key = image.path + index;
-        const shouldImageLoad = imagesToLoad.includes(index);
+        const shouldImageLoad = isInLoadingSpan(loadingSpan, index);
         return (
           <div key={key} className={classes.imageContainer}>
             <a
@@ -44,10 +46,7 @@ export const Gallery: FunctionComponent<IGallery> = ({ images, name }) => {
                   alt={alt}
                   fetchPriority={shouldImageLoad ? "high" : "auto"}
                   loading={shouldImageLoad ? "eager" : "lazy"}
-                  onLoad={() => {
-                    console.log({ index });
-                    onImageLoaded();
-                  }}
+                  onLoad={() => onImageLoaded(index)}
                 />
               ) : (
                 <div style={{ height: `${height}px`, width: `${width}px` }} />

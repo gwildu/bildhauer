@@ -4,118 +4,125 @@ export const useSortedImageLoading = (
   imageArrayLength: number,
   initialImageIndex: number | null,
 ) => {
-  const [direction, setDirection] = useState<
-    "ascending" | "descending" | "none"
-  >("ascending");
+  const [batchSize, setBatchSize] = useState(1);
+  const [lastDirection, setLastDirection] = useState<Direction>("ascending");
 
-  const [imagesToLoad, setImagesToLoad] = useState<number[]>([]);
+  const [lastLoadingSpan, setLastLoadingSpan] =
+    useState<LoadingSpan>(INITIAL_LOADING_SPAN);
+
   useEffect(() => {
     if (initialImageIndex === null) {
       return;
     }
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setImagesToLoad([initialImageIndex]);
+    setLastLoadingSpan([initialImageIndex, initialImageIndex]);
   }, [initialImageIndex]);
 
-  const onImageLoaded = () => {
-    const lastImageToLoadIndex = imagesToLoad[imagesToLoad.length - 1];
-    const reachedEndOfArray = lastImageToLoadIndex >= imageArrayLength - 2;
-    const reachedStartOfArray = lastImageToLoadIndex === 1;
-    console.log({
-      lastImageToLoadIndex,
-      reachedEndOfArray,
-      reachedStartOfArray,
-      direction,
+  const onImageLoaded = (loadedImageIndex) => {
+    const newState = getNewState({
+      batchSize,
+      lastLoadingSpan: lastLoadingSpan,
+      loadedImageIndex,
+      initialImageIndex,
+      imageArrayLength,
+      lastDirection,
     });
-    if (direction === "none") {
+
+    if (!newState) {
       return;
     }
-    const nextImageToLoadIndex =
-      direction === "ascending"
-        ? lastImageToLoadIndex + 1
-        : reachedEndOfArray
-          ? initialImageIndex - 1
-          : lastImageToLoadIndex - 1;
-    console.log({ nextImageToLoadIndex });
-    setImagesToLoad((prev) => {
-      return [...prev, nextImageToLoadIndex];
-    });
-    if (reachedEndOfArray) {
-      setDirection("descending");
-    }
-    if (reachedStartOfArray && direction === "descending") {
-      setDirection("none");
+    const { newLoadingSpan, newLastDirection, newBatchSize } = newState;
+
+    setLastLoadingSpan(newLoadingSpan);
+
+    setLastDirection(newLastDirection);
+
+    if (newBatchSize) {
+      setBatchSize(newBatchSize);
     }
   };
 
   return {
-    imagesToLoad,
+    loadingSpan: lastLoadingSpan,
     onImageLoaded,
   };
 };
 
-export const useSortedImageLoading_ = (
-  imageArrayLength: number,
-  imagesInViewPortIndexes: number[],
+const INITIAL_LOADING_SPAN: LoadingSpan = [Infinity, -1];
+
+export type Direction = "ascending" | "descending";
+export type LoadingSpan = [number, number];
+
+export const getNewState = ({
+  batchSize,
+  lastDirection,
+  lastLoadingSpan,
+  loadedImageIndex,
+  imageArrayLength,
+  initialImageIndex,
+}: {
+  batchSize: number;
+  lastDirection: Direction;
+  lastLoadingSpan: LoadingSpan;
+  loadedImageIndex: number;
+  imageArrayLength: number;
+  initialImageIndex;
+}): {
+  newLoadingSpan: LoadingSpan;
+  newLastDirection: Direction;
+  newBatchSize: number;
+} => {
+  const [currentStart, currentEnd] = lastLoadingSpan;
+
+  const reachedEndOfArray =
+    loadedImageIndex === imageArrayLength - 1 ||
+    initialImageIndex === imageArrayLength - 1;
+  const reachedStartOfArray = loadedImageIndex === 0 || initialImageIndex === 0;
+
+  const isInitialImage = loadedImageIndex === initialImageIndex;
+  const isLastImageOfAscendingSpan =
+    (lastDirection === "ascending" && loadedImageIndex === currentEnd) ||
+    reachedEndOfArray;
+  const isLastImageOfDescendingSpan =
+    (lastDirection === "descending" &&
+      loadedImageIndex === currentStart + batchSize - 1) ||
+    reachedStartOfArray;
+
+  if (
+    !isInitialImage &&
+    !isLastImageOfAscendingSpan &&
+    !isLastImageOfDescendingSpan
+  ) {
+    return;
+  }
+
+  const isNextSpanAscending =
+    (reachedStartOfArray && !reachedEndOfArray) ||
+    (lastDirection === "descending" && !reachedEndOfArray) ||
+    isInitialImage;
+  const isNextSpanDescending =
+    !isInitialImage &&
+    ((reachedEndOfArray && !reachedStartOfArray) ||
+      (lastDirection === "ascending" && !reachedStartOfArray));
+
+  const newStart = isNextSpanDescending
+    ? currentStart - batchSize
+    : currentStart;
+
+  const newEnd = isNextSpanAscending ? currentEnd + batchSize : currentEnd;
+
+  const newLoadingSpan: LoadingSpan = [newStart, newEnd];
+  const newLastDirection = isNextSpanAscending ? "ascending" : "descending";
+  const newBatchSize =
+    !isNextSpanDescending || reachedStartOfArray ? batchSize + 1 : null;
+
+  return { newLoadingSpan, newLastDirection, newBatchSize };
+};
+
+export const isInLoadingSpan = (
+  loadingSpan: [number, number],
+  index: number,
 ) => {
-  const [loadingInfo, setLoadingInfo] = useState<
-    ({ toLoad: boolean; loaded: boolean } | null)[]
-  >(
-    Array.from({ length: imageArrayLength }, (_, index) => {
-      const isImageInViewPort = imagesInViewPortIndexes.includes(index);
-      return isImageInViewPort
-        ? {
-            toLoad: true,
-            loaded: false,
-          }
-        : null;
-    }),
-  );
-  console.log({ loadingInfo });
-
-  useEffect(() => {
-    if (imagesInViewPortIndexes.length === 1) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setLoadingInfo(
-        Array.from({ length: imageArrayLength }, (_, index) => {
-          const isImageInViewPort = imagesInViewPortIndexes.includes(index);
-          return isImageInViewPort
-            ? {
-                toLoad: true,
-                loaded: false,
-              }
-            : null;
-        }),
-      );
-    }
-  }, [imagesInViewPortIndexes.length]);
-
-  const onImageLoaded = (loadedIndex) => {
-    const onlyOneImageLoaded = Boolean(
-      loadingInfo.filter((image) => image?.loaded === true).length,
-    );
-    const goingForward =
-      imageArrayLength - 1 === loadedIndex
-        ? false
-        : Boolean(loadingInfo[loadedIndex - 1]?.loaded) || onlyOneImageLoaded;
-    const goingBackward =
-      (!goingForward && Boolean(loadingInfo[loadedIndex + 1]?.loaded)) ||
-      onlyOneImageLoaded;
-
-    setLoadingInfo((prev) => {
-      return prev.map((state, index) => {
-        return {
-          toLoad:
-            (goingForward && index - 1 === loadedIndex) ||
-            (goingBackward && index + 1 === loadedIndex),
-          loaded: index === loadedIndex ? true : state?.loaded || false,
-        };
-      });
-    });
-    console.log({ loadedIndex });
-  };
-  return {
-    loadingInfo,
-    onImageLoaded,
-  };
+  const [start, end] = loadingSpan;
+  return index >= start && index <= end;
 };
