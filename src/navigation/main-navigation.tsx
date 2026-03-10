@@ -99,7 +99,7 @@ const mainNavigationData: IMainNavigationItem[] = [
         displayName: {
           ["de-CH"]: "Grabmale",
         },
-        path: "/gallery/gravemarkers",
+        path: "/sculpture/grave-markers/index.html",
       },
       {
         level: 2,

@@ -11,7 +11,7 @@ export const DefaultSidebarRight = () => {
     <QuickLinks
       links={[
         {
-          href: "/gallery/gravemarkers",
+          href: "/sculpture/grave-markers/index.html",
           text: "Gallerie Grabmale",
           isLinkActive: false,
           image: {
