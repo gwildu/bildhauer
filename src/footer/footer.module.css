@@ -1,4 +1,22 @@
-.footer {
-  margin-top: var(--gwi-spacing-2);
-  margin-bottom: var(--gwi-spacing-2);
+.container {
+  display: flex;
+  text-align: center;
+}
+
+.paragraph {
+  width: 100%;
+  margin: 0;
+  hyphens: none;
+}
+
+.hideAddress {
+  @media (--viewport-tablet-down) {
+    display: none;
+  }
+}
+
+.hideCompany {
+  @media (--viewport-mobile-down) {
+    display: none;
+  }
 }

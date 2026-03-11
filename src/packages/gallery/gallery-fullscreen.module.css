@@ -1,0 +1,140 @@
+.container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  overflow-x: scroll;
+  position: relative;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  height: 100%;
+}
+
+.slide {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+  transform-origin: center center;
+  transform: scale(1);
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.handle {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  height: 1em;
+  font-size: 40px;
+  line-height: 1;
+  padding: 0 10px;
+  text-decoration: none;
+  color: transparent;
+}
+
+.fixedHandle {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  height: 1.25em;
+  font-size: 40px;
+  line-height: 1;
+  padding: 5px 10px;
+  cursor: pointer;
+  pointer-events: none;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 40px / 60px;
+  font-weight: bold;
+  color: #404040;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.fullscreen {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1;
+  color: #404040;
+}
+
+.fullscreen .topLeft {
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  display: block;
+}
+
+.fullscreen:hover .topLeft {
+  top: 2px;
+  left: 5px;
+}
+
+.fullscreen .topRight {
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  display: block;
+}
+
+.fullscreen:hover .topRight {
+  top: 2px;
+  right: 5px;
+}
+
+.fullscreen .bottomLeft {
+  position: absolute;
+  bottom: 9px;
+  left: 7px;
+  display: block;
+}
+
+.fullscreen:hover .bottomLeft {
+  bottom: 7px;
+  left: 5px;
+}
+
+.fullscreen .bottomRight {
+  position: absolute;
+  bottom: 9px;
+  right: 7px;
+  display: block;
+}
+
+.fullscreen:hover .bottomRight {
+  bottom: 7px;
+  right: 5px;
+}

@@ -1,5 +1,4 @@
 import classes from "./heading.module.css";
-
 import { FunctionComponent, ReactNode } from "react";
 
 export type HeadingType = "MAIN_HEADING" | "SUB_HEADING_1";

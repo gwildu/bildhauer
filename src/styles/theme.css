@@ -45,6 +45,8 @@
   --gwi-spacing-1: var(--gwi-grid-spacing-base);
   --gwi-spacing-2: calc(2 * var(--gwi-grid-spacing-base));
   --gwi-spacing-3: calc(3 * var(--gwi-grid-spacing-base));
+  --gwi-spacing-5: calc(5 * var(--gwi-grid-spacing-base));
+
   --gwi-spacing-heading-main-top: calc(2 * var(--gwi-grid-spacing-base));
   --gwi-spacing-heading-main-bottom: calc(4 * var(--gwi-grid-spacing-base));
   --gwi-spacing-heading-sub-1-top: calc(3 * var(--gwi-grid-spacing-base));

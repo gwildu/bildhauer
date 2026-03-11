@@ -1,0 +1,9 @@
+.container {
+  overflow: hidden;
+}
+
+.main {
+  height: 100%;
+  overflow-y: scroll;
+  padding-bottom: var(--gwi-spacing-5);
+}

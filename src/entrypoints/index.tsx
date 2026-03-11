@@ -1,4 +1,4 @@
-import { DefaultInnerLayout } from "../layout/default/inner-layout/inner-layout";
+import { DefaultInnerLayout } from "../layout/inner-layout/inner-layout";
 import { PageHead } from "../packages/seo/page-head";
 import { Heading } from "../packages/typography/heading";
 import { Paragraph } from "../packages/typography/paragraph";
@@ -8,10 +8,7 @@ export const Index = () => {
     <>
       <DefaultInnerLayout pageHead={pageHead}>
         <Heading markupLevel={"h1"} stylingLevel={"MAIN_HEADING"}>
-          <strong>Bildhauerei & Restaurationen Rickenbacher</strong>
-        </Heading>
-        <Heading markupLevel={"h2"} stylingLevel={"SUB_HEADING_1"}>
-          Herzlich willkommen auf unsere Webseite
+          <strong>Herzlich willkommen</strong>
         </Heading>
         <Paragraph>
           Wir führen Arbeiten in der Bildhauerei und Restaurationen aus. Neben

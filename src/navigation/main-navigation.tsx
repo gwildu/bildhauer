@@ -1,4 +1,4 @@
-import { INavigationItem } from "./types";
+import { IMainNavigationItem } from "./types";
 import classes from "./main-navigation.module.css";
 import { TextLink } from "../link";
 import { FC, useState } from "react";
@@ -6,7 +6,7 @@ import { FC, useState } from "react";
 export const MainNavigation = () => {
   const [isChecked, setIsChecked] = useState(false);
   return (
-    <div className={classes.wrapper}>
+    <>
       <input
         id={"check"}
         checked={isChecked}
@@ -34,12 +34,12 @@ export const MainNavigation = () => {
       >
         {mainNavigationData}
       </RecursiveNavigation>
-    </div>
+    </>
   );
 };
 
 interface IRecursiveNavigation {
-  children: MainNavigationData;
+  children: IMainNavigationItem[];
   className: string;
   onNavigationChange: () => void;
 }
@@ -76,10 +76,7 @@ export const RecursiveNavigation: FC<IRecursiveNavigation> = ({
   );
 };
 
-interface IMainNavigationItem extends INavigationItem<IMainNavigationItem> {}
-
-export type MainNavigationData = IMainNavigationItem[];
-const mainNavigationData: MainNavigationData = [
+const mainNavigationData: IMainNavigationItem[] = [
   {
     level: 1,
     name: "index",
