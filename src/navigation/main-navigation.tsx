@@ -111,4 +111,12 @@ const mainNavigationData: IMainNavigationItem[] = [
       },
     ],
   },
+  {
+    level: 1,
+    name: "Telefon",
+    displayName: {
+      ["de-CH"]: "Tel: 071 951 88 88",
+    },
+    path: "tel:+41719518888",
+  },
 ];

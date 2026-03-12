@@ -47,6 +47,7 @@
 
 @media (--viewport-tablet-down) {
   .level-1.list {
+    flex-direction: column;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -57,9 +58,14 @@
   }
   .level-1.item {
     display: block;
+    order: 1;
 
     &:hover .level-2 {
       display: block;
+    }
+
+    &:last-child {
+      order: 0;
     }
   }
   .level-2.list {
@@ -98,12 +104,12 @@
   }
   .fakeCheck:checked ~ .toggle.cross,
   .fakeCheck:checked ~ .navi {
-    display: block;
+    display: inherit;
   }
   .fakeCheck:checked ~ .toggle.burger {
     display: none;
   }
   .fakeCheck:checked ~ .navi {
-    display: block;
+    display: inherit;
   }
 }
