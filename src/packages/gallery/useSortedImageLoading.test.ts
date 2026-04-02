@@ -69,8 +69,8 @@ describe("useSortedImageLoading", () => {
         initialImageIndex: 0,
         imageArrayLength: 9,
         expected: {
-          newLoadingSpan: [0, 15],
-          newLastDirection: "ascending",
+          newLoadingSpan: [0, 10],
+          newLastDirection: "descending",
           newBatchSize: 6,
         },
       },
@@ -83,8 +83,8 @@ describe("useSortedImageLoading", () => {
         initialImageIndex: 0,
         imageArrayLength: 10,
         expected: {
-          newLoadingSpan: [0, 15],
-          newLastDirection: "ascending",
+          newLoadingSpan: [0, 10],
+          newLastDirection: "descending",
           newBatchSize: 6,
         },
       },
@@ -209,8 +209,8 @@ describe("useSortedImageLoading", () => {
         initialImageIndex: 10,
         imageArrayLength: 20,
         expected: {
-          newLoadingSpan: [-4, 25],
-          newLastDirection: "ascending",
+          newLoadingSpan: [-4, 20],
+          newLastDirection: "descending",
           newBatchSize: 6,
         },
       },
@@ -223,7 +223,11 @@ describe("useSortedImageLoading", () => {
         loadedImageIndex: 1,
         initialImageIndex: 10,
         imageArrayLength: 20,
-        expected: undefined,
+        expected: {
+          newBatchSize: 6,
+          newLastDirection: "descending",
+          newLoadingSpan: [-4, 20],
+        },
       },
     ])(
       "returns correct loadingSpan when $description",

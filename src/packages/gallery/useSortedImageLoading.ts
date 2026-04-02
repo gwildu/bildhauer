@@ -76,8 +76,10 @@ export const getNewState = ({
 
   const reachedEndOfArray =
     loadedImageIndex === imageArrayLength - 1 ||
-    initialImageIndex === imageArrayLength - 1;
-  const reachedStartOfArray = loadedImageIndex === 0 || initialImageIndex === 0;
+    initialImageIndex === imageArrayLength - 1 ||
+    currentEnd >= imageArrayLength - 1;
+  const reachedStartOfArray =
+    loadedImageIndex === 0 || initialImageIndex === 0 || currentStart <= 0;
 
   const isInitialImage = loadedImageIndex === initialImageIndex;
   const isLastImageOfAscendingSpan =
@@ -99,9 +101,9 @@ export const getNewState = ({
   const isNextSpanAscending =
     (reachedStartOfArray && !reachedEndOfArray) ||
     (lastDirection === "descending" && !reachedEndOfArray) ||
-    isInitialImage;
+    (isInitialImage && !reachedEndOfArray);
   const isNextSpanDescending =
-    !isInitialImage &&
+    !(isInitialImage && !reachedEndOfArray) &&
     ((reachedEndOfArray && !reachedStartOfArray) ||
       (lastDirection === "ascending" && !reachedStartOfArray));
 
