@@ -73,6 +73,13 @@
   right: 0;
 }
 
+.back {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+}
+
 .fullscreen {
   position: absolute;
   top: 10px;
