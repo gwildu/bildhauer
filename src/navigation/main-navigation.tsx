@@ -91,15 +91,15 @@ const mainNavigationData: IMainNavigationItem[] = [
     displayName: {
       ["de-CH"]: "Bildhauerei",
     },
-    path: "/sculpture/grave-markers/index.html",
+    path: "/gallery/grabmale",
     sub: [
       {
         level: 2,
-        name: "grave markers",
+        name: "grabmale",
         displayName: {
           ["de-CH"]: "Grabmale",
         },
-        path: "/sculpture/grave-markers/index.html",
+        path: "/gallery/grabmale",
       },
       {
         level: 2,

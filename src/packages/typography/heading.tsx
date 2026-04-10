@@ -7,6 +7,7 @@ interface IHeadings {
   markupLevel: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   stylingLevel: HeadingType;
   children: ReactNode;
+  className?: string;
 }
 
 const styleMap = {
@@ -18,8 +19,11 @@ export const Heading: FunctionComponent<IHeadings> = ({
   markupLevel,
   stylingLevel,
   children,
+  className,
 }) => {
   const HeadingTag = markupLevel;
   const styles = styleMap[stylingLevel];
-  return <HeadingTag className={styles}>{children}</HeadingTag>;
+  return (
+    <HeadingTag className={`${styles} ${className}`}>{children}</HeadingTag>
+  );
 };

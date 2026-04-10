@@ -7,6 +7,7 @@ import {
   isInLoadingSpan,
   useSortedImageLoading,
 } from "./useSortedImageLoading";
+import { Link } from "../../link";
 
 interface IGalleryFullscreen {
   images: {
@@ -16,16 +17,20 @@ interface IGalleryFullscreen {
   }[];
 }
 export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
-  function toggleFullScreen() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-    } else if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
+  // const [isFullScreen, setIsFullScreen] = useState(false);
+  // function toggleFullScreen() {
+  //   if (!document.fullscreenElement) {
+  //     document.documentElement.requestFullscreen();
+  //     setIsFullScreen(true);
+  //   } else if (document.exitFullscreen) {
+  //     document.exitFullscreen();
+  //     setIsFullScreen(false);
+  //   }
+  // }
 
   const searchParams = useSearchParams();
   const rawImageIndexParam = searchParams.get("imageIndex");
+  const backLink = searchParams.get("backlink");
   const imageIndex = rawImageIndexParam ? Number(rawImageIndexParam) : null;
 
   const { loadingSpan, onImageLoaded } = useSortedImageLoading(
@@ -35,13 +40,18 @@ export const GalleryFullscreen: FC<IGalleryFullscreen> = ({ images }) => {
 
   return (
     <div className={classes.container}>
+      {backLink && (
+        <Link href={backLink} className={classes.back} scroll={true}>
+          zurück
+        </Link>
+      )}
       <div className={classes.slider}>
-        <button className={classes.fullscreen} onClick={toggleFullScreen}>
-          <span className={classes.topLeft}>⌜</span>
-          <span className={classes.topRight}>⌝</span>
-          <span className={classes.bottomLeft}>⌞</span>
-          <span className={classes.bottomRight}>⌟</span>
-        </button>
+        {/*<button className={classes.fullscreen} onClick={toggleFullScreen}>*/}
+        {/*  <span className={classes.topLeft}>⌜</span>*/}
+        {/*  <span className={classes.topRight}>⌝</span>*/}
+        {/*  <span className={classes.bottomLeft}>⌞</span>*/}
+        {/*  <span className={classes.bottomRight}>⌟</span>*/}
+        {/*</button>*/}
         <span className={`${classes.fixedHandle} ${classes.prev}`}>〈</span>
         <span className={`${classes.fixedHandle} ${classes.next}`}>〉</span>
         <ul className={classes.slides}>

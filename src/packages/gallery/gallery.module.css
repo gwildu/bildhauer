@@ -8,6 +8,29 @@
   }
 }
 
+.heading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0 !important;
+  margin-top: var(--gwi-spacing-5) !important;
+  text-transform: capitalize;
+
+  grid-column: 1 / max-content;
+
+  @media (--viewport-tablet-up) {
+    grid-column: 2 / 8;
+  }
+  @media (--viewport-laptop-up) {
+    grid-column: 2 / 11;
+  }
+  @media (--viewport-desktop-up) {
+    grid-column: 2 / 14;
+  }
+  @media (--viewport-desktop-big-up) {
+    grid-column: 2 / 14;
+  }
+}
+
 .galleryContainer {
   margin-top: var(--gwi-spacing-3);
   grid-column: 1 / max-content;
